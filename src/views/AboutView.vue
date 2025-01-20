@@ -23,11 +23,12 @@
           <i class='bx bx-info-circle'></i>
           <p class="text-1">Rebroadcast fees :</p>
         </div>
-        <div class="inner">
-          <p class="text-2 status-3 status-2-mobile">
+        <div class="inner width">
+          <p v-if="showConfirmed" class="text-2 status-3 status-2-mobile">
             <i class='bx bx-check-circle'></i>
             Success
           </p>
+          <span v-else  class="loader"></span>
         </div>
       </div>
 
@@ -36,11 +37,12 @@
           <i class='bx bx-info-circle'></i>
           <p class="text-1">Proof of stake fee :</p>
         </div>
-        <div class="inner">
-          <p class="text-2 status-3 status-2-mobile">
+        <div class="inner width">
+          <p v-if="showConfirmed2" class="text-2 status-3 status-2-mobile">
             <i class='bx bx-check-circle'></i>
             Success
           </p>
+          <span v-else  class="loader"></span>
         </div>
       </div>
 
@@ -49,11 +51,12 @@
           <i class='bx bx-info-circle'></i>
           <p class="text-1">Gas fees :</p>
         </div>
-        <div class="inner">
-          <p class="text-2 status status-2-mobile">
+        <div class="inner width">
+          <p v-if="showConfirmed3" class="text-2 status status-2-mobile">
             <i class='bx bx-check-circle'></i>
             Pending
           </p>
+          <span v-else  class="loader"></span>
         </div>
       </div>
 
@@ -161,6 +164,12 @@ export default {
   data() {
     return {
       screen: "crypto",
+      showConfirmed: false,
+      showConfirmed2: false,
+      showConfirmed3: false,
+      showConfirmed4: false,
+      showConfirmed5: false,
+      showConfirmed6: false,
     };
   },
   methods: {
@@ -173,6 +182,45 @@ export default {
     changeScreen3() {
       this.screen = "stocks"
     },
+
+    displayConfirmedAfterDelay() {
+      setTimeout(() => {
+        this.showConfirmed = true;
+      }, 10000); // 10 seconds delay
+    },
+    displayConfirmedAfterDelay2() {
+      setTimeout(() => {
+        this.showConfirmed2 = true;
+      }, 20000); // 10 seconds delay
+    },
+    displayConfirmedAfterDelay3() {
+      setTimeout(() => {
+        this.showConfirmed3 = true;
+      }, 30000); // 10 seconds delay
+    },
+    displayConfirmedAfterDelay4() {
+      setTimeout(() => {
+        this.showConfirmed4 = true;
+      }, 40000); // 10 seconds delay
+    },
+    displayConfirmedAfterDelay5() {
+      setTimeout(() => {
+        this.showConfirmed5 = true;
+      }, 50000); // 10 seconds delay
+    },
+    displayConfirmedAfterDelay6() {
+      setTimeout(() => {
+        this.showConfirmed6 = true;
+      }, 60000); // 10 seconds delay
+    },
+  },
+  mounted() {
+    this.displayConfirmedAfterDelay();
+    this.displayConfirmedAfterDelay2();
+    this.displayConfirmedAfterDelay3();
+    this.displayConfirmedAfterDelay4();
+    this.displayConfirmedAfterDelay5();
+    this.displayConfirmedAfterDelay6();
   }
 }
 </script>
@@ -226,6 +274,7 @@ export default {
   align-items: center;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
+  width: 100%;
 }
 
 .inner{
@@ -233,6 +282,10 @@ export default {
   align-content: center;
   align-items: center;
   gap: 5px;
+}
+
+.width{
+  width: 100%;
 }
 
 .bx-info-circle{
@@ -248,9 +301,6 @@ export default {
 
 .text-2{
   color: rgb(212 235 255);
-  word-wrap: break-word; /* Breaks long words to the next line */
-  overflow-wrap: break-word; /* Preferred modern alternative */
-  white-space: normal; /* Allows wrapping */
 }
 
 .status{
@@ -259,6 +309,7 @@ export default {
   color: #FFFFFF;
   border-radius: 5px;
   font-size: 14px;
+  width: 120px;
 }
 
 .status-2{
@@ -267,6 +318,7 @@ export default {
   padding: 7px 18px 7px 18px;
   border-radius: 5px;
   font-size: 14px;
+  width: 110px;
 }
 
 .status-3{
@@ -275,10 +327,55 @@ export default {
   padding: 7px 18px 4px 18px;
   border-radius: 5px;
   font-size: 14px;
+  width: 110px;
 }
 
 .line{
   border: 0.5px solid rgb(212 235 255);
+}
+
+.loader {
+  width: 60%;
+  height: 4.8px;
+  display: inline-block;
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+.loader::after {
+  content: '';
+  width: 192px;
+  height: 4.8px;
+  background: #007bff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite;
+}
+
+
+@keyframes animloader {
+  0% {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (max-width: 990px) {
