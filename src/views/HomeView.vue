@@ -5,7 +5,7 @@
 <!--    </div>-->
 
     <div class="section-1">
-      <p class="text-1">Memspool Hash Analyzer</p>
+      <p class="text-1">MemPool Hash Analyzer</p>
       <p class="text-2">Utilize your hash ID to efficiently review and visualize your rebroadcast transaction
         within the mempool.</p>
 

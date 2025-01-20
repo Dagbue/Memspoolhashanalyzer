@@ -14,7 +14,7 @@
           <p class="text-1">Rebroadcast Hash:</p>
         </div>
         <div class="inner">
-          <p class="text-2">0x1ed4cedfb235556ee5598c902dff761eaa7927b7f869e8b4d04fa1228fb2d9f8</p>
+          <p class="text-2 text-2-mobile">0x1ed4cedfb235556ee5598c902dff761eaa7927b7f869e8b4d04fa1228fb2d9f8</p>
         </div>
       </div>
 
@@ -91,7 +91,7 @@
           <p class="text-1">Transaction Action :</p>
         </div>
         <div class="inner">
-          <p class="text-2">
+          <p class="text-2 text-2-mobile">
             Amount $8,000,000 BTC To 0x1ed4cedfb235556ee5598c902dff761eaa7927b7f869e8b4d04fa1228fb2d9f8
           </p>
         </div>
@@ -106,7 +106,7 @@
           <p class="text-1">Address :</p>
         </div>
         <div class="inner">
-          <p class="text-2">0x1ed4cedfb235556ee5598c902dff761eaa7927b7f869e8b4d04fa1228fb2d9f8</p>
+          <p class="text-2 text-2-mobile">0x1ed4cedfb235556ee5598c902dff761eaa7927b7f869e8b4d04fa1228fb2d9f8</p>
         </div>
       </div>
 
@@ -116,7 +116,7 @@
           <p class="text-1">Value :</p>
         </div>
         <div class="inner">
-          <p class="text-2">
+          <p class="text-2 text-2-mobile">
             $8,000,000 BTC
           </p>
         </div>
@@ -317,13 +317,20 @@ export default {
     word-wrap: break-word; /* Breaks long words to the next line */
     overflow-wrap: break-word; /* Preferred modern alternative */
     white-space: normal; /* Allows wrapping */
+    font-size: 18px;
   }
 
 }
 
 @media (max-width: 500px){
   .status-2-mobile {
-    font-size: 12px;
+    font-size: 11px;
+  }
+  .text-2-mobile{
+    font-size: 15px;
+  }
+  .text-1{
+    font-size: 16px;
   }
 }
 
