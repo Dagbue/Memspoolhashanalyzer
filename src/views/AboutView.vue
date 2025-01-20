@@ -417,6 +417,19 @@ export default {
     font-size: 18px;
   }
 
+
+  .status{
+    width: 110px;
+  }
+
+  .status-2{
+    width: 100px;
+  }
+
+  .status-3{
+    width: 100px;
+  }
+
 }
 
 @media (max-width: 500px){
