@@ -126,7 +126,7 @@ export default {
         close: true,
         gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
-        backgroundColor: "#cc0000",
+        backgroundColor: "#9e0202",
         stopOnFocus: true, // Prevents dismissing of toast on hover
         onClick: function(){} // Callback after click
       }).showToast();
@@ -144,7 +144,7 @@ export default {
 
       // Check for specific valid Hash IDs
       const validHashes = [
-        '0x1ed4cedfb235556ee5598c902dff761eaa7927b7f869e8b4d04fa1228fb2d9f8',
+        '88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3',
       ];
 
       if (validHashes.includes(this.inputValue)) {
@@ -164,8 +164,6 @@ export default {
         }, 4000);
 
 
-        // Update the Vuex store and clear the input
-        this.$store.commit('updateHash', { inputValue: this.inputValue });
         this.inputValue = "";
       } else {
         // Swal.fire({

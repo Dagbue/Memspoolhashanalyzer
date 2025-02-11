@@ -11,66 +11,71 @@
       <div class="separate mobile-seprate">
         <div class="inner">
           <i class='bx bx-info-circle'></i>
-          <p class="text-1">Rebroadcast Hash:</p>
+          <p class="text-1">Transaction Hash:</p>
         </div>
         <div class="inner">
-          <p class="text-2 text-2-mobile">0x1ed4cedfb235556ee5598c902dff761eaa7927b7f869e8b4d04fa1228fb2d9f8</p>
+          <p class="text-2 text-2-mobile">88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3</p>
         </div>
       </div>
 
       <div class="separate">
         <div class="inner">
           <i class='bx bx-info-circle'></i>
-          <p class="text-1">Rebroadcast fees :</p>
+          <p class="text-1">confirmation :</p>
         </div>
         <div class="inner width">
-          <p v-if="showConfirmed" class="text-2 status-3 status-2-mobile">
+<!--          <p v-if="showConfirmed" class="text-2 status-3 status-2-mobile">-->
+<!--            <i class='bx bx-check-circle'></i>-->
+<!--            Success-->
+<!--          </p>-->
+          <p v-if="showConfirmed" class="text-2 status status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            Success
+            1/6
           </p>
           <span v-else  class="loader"></span>
         </div>
       </div>
 
       <div class="separate">
-        <div class="inner">
-          <i class='bx bx-info-circle'></i>
-          <p class="text-1">Proof of stake fee :</p>
-        </div>
-        <div class="inner width">
-          <p v-if="showConfirmed2" class="text-2 status-3 status-2-mobile">
-            <i class='bx bx-check-circle'></i>
-            Success
-          </p>
-          <span v-else  class="loader"></span>
-        </div>
-      </div>
-
-      <div class="separate">
-        <div class="inner">
-          <i class='bx bx-info-circle'></i>
-          <p class="text-1">Gas fees :</p>
-        </div>
-        <div class="inner width">
-          <p v-if="showConfirmed3" class="text-2 status status-2-mobile">
-            <i class='bx bx-check-circle'></i>
-            Pending
-          </p>
-          <span v-else  class="loader"></span>
-        </div>
-      </div>
-
-      <div class="separate mobile-seprate">
         <div class="inner">
           <i class='bx bx-info-circle'></i>
           <p class="text-1">Block :</p>
         </div>
-        <div class="inner">
-          <p class="text-2 status-2-mobile">
-            <i style="color: #4BB543" class='bx bx-check-circle'></i> 21647915 <span style="margin-left: 5px;" class="status-2  status-2-mobile">69133 block confirmations.</span>
+        <div class="inner width">
+          <p v-if="showConfirmed2" class="text-2 status status-2-mobile">
+            <i class='bx bx-check-circle'></i>
+            0 of 6
           </p>
+          <span v-else  class="loader"></span>
         </div>
       </div>
+
+<!--      <div class="separate">-->
+<!--        <div class="inner">-->
+<!--          <i class='bx bx-info-circle'></i>-->
+<!--          <p class="text-1">Gas fees :</p>-->
+<!--        </div>-->
+<!--        <div class="inner width">-->
+<!--          <p v-if="showConfirmed3" class="text-2 status status-2-mobile">-->
+<!--            <i class='bx bx-check-circle'></i>-->
+<!--            Pending-->
+<!--          </p>-->
+<!--          <span v-else  class="loader"></span>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="separate mobile-seprate">-->
+<!--        <div class="inner">-->
+<!--          <i class='bx bx-info-circle'></i>-->
+<!--          <p class="text-1">Block :</p>-->
+<!--        </div>-->
+<!--        <div class="inner">-->
+<!--          <p class="text-2 status-2-mobile">-->
+<!--            <span style="margin-left: 5px;" class="status-2  status-2-mobile">0 of 6 confirmations.</span>-->
+<!--&lt;!&ndash;            <i style="color: #4BB543" class='bx bx-check-circle'></i> 21647915 <span style="margin-left: 5px;" class="status-2  status-2-mobile">69133 block confirmations.</span>&ndash;&gt;-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <div class="separate">
         <div class="inner">
@@ -80,7 +85,7 @@
         <div class="inner">
           <p class="text-2">
             <i class='bx bx-time-five' ></i>
-            October
+            11th October
           </p>
         </div>
       </div>
@@ -88,14 +93,26 @@
       <hr class="line"/>
 
       <br/>
+<!--      <div class="separate mobile-seprate">-->
+<!--        <div class="inner">-->
+<!--          <i class='bx bx-highlight'></i>-->
+<!--          <p class="text-1">Transaction Action :</p>-->
+<!--        </div>-->
+<!--        <div class="inner">-->
+<!--          <p class="text-2 text-2-mobile">-->
+<!--            Amount $8,000,000 BTC To 0x1ed4cedfb235556ee5598c902dff761eaa7927b7f869e8b4d04fa1228fb2d9f8-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>      -->
+
       <div class="separate mobile-seprate">
         <div class="inner">
           <i class='bx bx-highlight'></i>
-          <p class="text-1">Transaction Action :</p>
+          <p class="text-1">Transaction Action Amount :</p>
         </div>
         <div class="inner">
           <p class="text-2 text-2-mobile">
-            Amount $8,000,000 BTC To 0x1ed4cedfb235556ee5598c902dff761eaa7927b7f869e8b4d04fa1228fb2d9f8
+            Amount $93,822 BTC To 88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3
           </p>
         </div>
       </div>
@@ -104,23 +121,23 @@
 
     <div v-show="this.screen === 'forex'" class="section-1">
       <div class="separate mobile-seprate">
-        <div class="inner">
+        <div class="inner-2">
           <i class='bx bx-info-circle'></i>
           <p class="text-1">Address :</p>
         </div>
-        <div class="inner">
-          <p class="text-2 text-2-mobile">0x1ed4cedfb235556ee5598c902dff761eaa7927b7f869e8b4d04fa1228fb2d9f8</p>
+        <div class="inner-2">
+          <p class="text-2 text-2-mobile">88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3</p>
         </div>
       </div>
 
       <div class="separate">
-        <div class="inner">
+        <div class="inner-2">
           <i class='bx bx-info-circle'></i>
           <p class="text-1">Value :</p>
         </div>
-        <div class="inner">
+        <div class="inner-2">
           <p class="text-2 text-2-mobile">
-            $8,000,000 BTC
+            $93,822 BTC
           </p>
         </div>
       </div>
@@ -129,7 +146,7 @@
 
     <div v-show="this.screen === 'stocks'" class="section-1">
       <div class="separate">
-        <div class="inner">
+        <div class="inner-2">
           <i class='bx bx-info-circle'></i>
           <p class="text-1">A set of information that represents the current state and amount is updated when a
             transaction takes place on the network. The below is a summary of those changes :</p>
@@ -140,9 +157,9 @@
       </div>
 
       <div class="separate">
-        <div class="inner">
+        <div class="inner-2">
           <i class='bx bx-info-circle'></i>
-          <p class="text-1">0x1ed4cedf….fa1228fb2d9f8   $8,000,000 </p>
+          <p class="text-1">88e64fed7f….9c931a6724b2f3   $93,822 </p>
         </div>
 <!--        <div class="inner">-->
 <!--          <p class="text-2">-->
@@ -281,6 +298,14 @@ export default {
   display: flex;
   align-content: center;
   align-items: center;
+  gap: 2.5px;
+  width: 18%;
+}
+
+.inner-2{
+  display: flex;
+  align-content: center;
+  align-items: center;
   gap: 5px;
 }
 
@@ -305,11 +330,11 @@ export default {
 
 .status{
   background-color: #cc0000;
-  padding: 7px 18px 4px 18px;
+  padding: 7px 7px 4px 18px;
   color: #FFFFFF;
   border-radius: 5px;
   font-size: 14px;
-  width: 120px;
+  width: 100px;
 }
 
 .status-2{
@@ -406,6 +431,7 @@ export default {
 
   .inner{
     padding-bottom: 10px;
+    width: 100%;
   }
 
   .text-2{
