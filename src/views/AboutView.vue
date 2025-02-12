@@ -112,7 +112,7 @@
         </div>
         <div class="inner">
           <p class="text-2 text-2-mobile">
-            Amount $93,822 BTC To 88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3
+            Amount $93,822 ETH To 88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3
           </p>
         </div>
       </div>
@@ -137,7 +137,7 @@
         </div>
         <div class="inner-2">
           <p class="text-2 text-2-mobile">
-            $93,822 BTC
+            $93,822 ETH
           </p>
         </div>
       </div>
