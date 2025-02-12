@@ -85,7 +85,7 @@
         <div class="inner">
           <p class="text-2">
             <i class='bx bx-time-five' ></i>
-            11th October
+            11th February
           </p>
         </div>
       </div>
