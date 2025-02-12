@@ -9,7 +9,7 @@
           <i class='bx bx-x' @click="close"></i>
         </div>
         <div class="second-part">
-          <p class="text-3">Payment Method: Bitcoin</p>
+          <p class="text-3">Payment Method: Ethereum</p>
           <hr/>
           <!--          <p class="text-2">How to fund your wallet:</p>-->
           <!--          <p class="text-3">Transfer desired amount to the details displayed below and have your balance funded</p>-->
@@ -47,7 +47,7 @@
 
 
           <div class="input-button-wrapper">
-            <p class="text-fiat">Fiat amount: $30,000.00 | 1 BTC = {{bitcoinRate}}</p>
+            <p class="text-fiat">Fiat amount: $93,822.00 | 1 ETH = {{ethereumRate}}</p>
           </div>
 
           <hr/>
@@ -77,6 +77,7 @@
 // import Swal from "sweetalert2";
 import VueQrcode from '@chenfengyuan/vue-qrcode';
 import {mapState} from "vuex";
+import axios from "axios";
 
 export default {
   name: "FundWalletModal4",
@@ -118,6 +119,24 @@ export default {
           .catch(error => {
             console.error(error);
             // Set loading to false also if there is an error
+            this.loading = false;
+          });
+    },
+
+    fetchEthereumRate() {
+      // Set loading to true when the request starts
+      this.loading = true;
+
+      // Use CoinGecko API to fetch the Ethereum price
+      axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
+          .then(response => {
+            this.ethereumRate = response.data.ethereum.usd;
+            // Set loading to false when the data is successfully fetched
+            this.loading = false;
+          })
+          .catch(error => {
+            console.error(error);
+            // Set loading to false if there is an error
             this.loading = false;
           });
     },
@@ -167,23 +186,26 @@ export default {
       inputValue1: '',
       inputValue2: '',
       inputValue3: 119000,
-      inputValue4: 30000,
+      inputValue4: 10000,
       bitcoinRate: null,
+      ethereumRate: null,
     };
   },
   created() {
     this.fetchBitcoinRate()
-    this.convertAndSave()
-    this.bitcoinAddress = "bc1qwj8lk74at6fajuk4uy8e0cgmlgpvyf08rj8phw"
-    this.inputValue1 = "bc1qwj8lk74at6fajuk4uy8e0cgmlgpvyf08rj8phw"
-    this.inputValue2 = this.loginForm.inputValue2
+    this.fetchEthereumRate()
+    // this.convertAndSave()
+    this.bitcoinAddress = "0x72998d1c911956E77Ac6DC014a1dfABE3A04F8cB"
+    this.inputValue1 = "0x72998d1c911956E77Ac6DC014a1dfABE3A04F8cB"
+    // this.inputValue2 = this.loginForm.inputValue2
   },
   mounted() {
     this.fetchBitcoinRate()
-    this.convertAndSave()
-    this.bitcoinAddress = "bc1qwj8lk74at6fajuk4uy8e0cgmlgpvyf08rj8phw"
-    this.inputValue1 = "bc1qwj8lk74at6fajuk4uy8e0cgmlgpvyf08rj8phw"
-    this.inputValue2 = this.loginForm.inputValue2
+    this.fetchEthereumRate()
+    // this.convertAndSave()
+    this.bitcoinAddress = "0x72998d1c911956E77Ac6DC014a1dfABE3A04F8cB"
+    this.inputValue1 = "0x72998d1c911956E77Ac6DC014a1dfABE3A04F8cB"
+    // this.inputValue2 = this.loginForm.inputValue2
   }
 }
 </script>
@@ -219,11 +241,11 @@ dialog {
   display: block;
   overflow: hidden;
   width: 420px;
-  height: 600px;
+  height: 620px;
   /*height: auto;*/
   padding: 24px;
   border-radius: 5px;
-  background-color: #ffffff;
+  background-color: rgba(5, 13 ,33 ,0.8);
   border: 0.5px solid #3C4A57FF;
   box-shadow: 0 0 34px 0 rgba(3, 28, 67, 0.13);
 }
@@ -236,14 +258,18 @@ dialog {
 .bx-x{
   font-size: 25px;
   padding-top: 2px;
-  color: #0f171c;
+  color: #ffffff;
+}
+
+label{
+  color: #ffffff;
 }
 
 .text-1{
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
-  color: #0f171c;
+  color: #ffffff;
   padding-top: 2.5%;
   padding-bottom: 1%;
 }
@@ -252,7 +278,7 @@ dialog {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #070e20;
+  color: #ffffff;
   padding-top: 1%;
   padding-bottom: 2%;
 }
@@ -261,7 +287,7 @@ dialog {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #070e20;
+  color: #ffffff;
   padding-top: 1.5%;
   padding-bottom: 2%;
 }
@@ -270,7 +296,7 @@ dialog {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #070e20;
+  color: #ffffff;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
 }
@@ -279,7 +305,7 @@ dialog {
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
-  color: #070e20;
+  color: #ffffff;
   padding-top: 2%;
   padding-bottom: 2%;
   word-wrap: break-word; /* or overflow-wrap: break-word; */
@@ -318,19 +344,15 @@ button{
 }
 
 .submit-button {
-  padding: 8px 16px;
+  padding: 9.5px 16px;
   font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: 1px solid #007bff;
+  background-image: linear-gradient(87.71deg, #38ffea 3.28%, #72a2ff 114.54%);
+  color: #000000;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
 }
 
-.submit-button:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-}
+
 
 .loader {
   width: 65%;
@@ -362,11 +384,13 @@ button{
 .loader-text{
   font-size: 13px;
   margin-right: 10px;
+  color: #FFFFFF;
 }
 
 .text-fiat{
   font-size: 13px;
   margin-bottom: 2%;
+  color: #FFFFFF;
 }
 
 .qr-code{
@@ -375,6 +399,8 @@ button{
 
 hr{
   border: 0.5px solid #ccc;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 @keyframes animloader {

@@ -50,6 +50,21 @@
         </div>
       </div>
 
+
+      <div class="separate" @click="showDialog">
+        <div class="inner">
+<!--          <i class='bx bx-info-circle'></i>-->
+          <p class="text-1-amber">RBF</p>
+        </div>
+<!--        <div class="inner width">-->
+<!--          <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
+<!--            <i class='bx bx-check-circle'></i>-->
+<!--            0 of 6-->
+<!--          </p>-->
+<!--          <span v-else  class="loader"></span>-->
+<!--        </div>-->
+      </div>
+
 <!--      <div class="separate">-->
 <!--        <div class="inner">-->
 <!--          <i class='bx bx-info-circle'></i>-->
@@ -170,14 +185,19 @@
 
     </div>
 
+    <fund-wallet-modal4 @close="hideDialog" v-if="dialogIsVisible" />
+
 
   </div>
 </template>
 
 
 <script>
+import FundWalletModal4 from "@/components/BaseComponents/modal/FundWalletModal4.vue";
+
 export default {
   name: "AboutView",
+  components: {FundWalletModal4},
   data() {
     return {
       screen: "crypto",
@@ -187,9 +207,18 @@ export default {
       showConfirmed4: false,
       showConfirmed5: false,
       showConfirmed6: false,
+      dialogIsVisible: false,
     };
   },
   methods: {
+
+    hideDialog() {
+      this.dialogIsVisible = false;
+    },
+    showDialog() {
+        this.dialogIsVisible = true;
+    },
+
     changeScreen() {
       this.screen = "crypto"
     },
@@ -335,6 +364,15 @@ export default {
   border-radius: 5px;
   font-size: 14px;
   width: 100px;
+}
+
+.text-1-amber{
+  background-color: #FFBF00;
+  padding: 7px 7px 4px 20px;
+  color: #FFFFFF;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 70px;
 }
 
 .status-2{
