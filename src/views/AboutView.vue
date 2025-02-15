@@ -30,7 +30,7 @@
 <!--          </p>-->
           <p v-if="showConfirmed" class="text-2 status status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            1/6
+            3/6
           </p>
           <span v-else  class="loader"></span>
         </div>
