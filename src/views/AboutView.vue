@@ -42,9 +42,9 @@
           <p class="text-1">Block :</p>
         </div>
         <div class="inner width">
-          <p v-if="showConfirmed2" class="text-2 status-amber status-2-mobile">
+          <p v-if="showConfirmed2" class="text-2 status-green status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            5 of 6
+            6 of 6
           </p>
           <span v-else  class="loader"></span>
         </div>
@@ -56,13 +56,14 @@
 <!--          <i class='bx bx-info-circle'></i>-->
           <p class="text-1-amber">RBF</p>
         </div>
-<!--        <div class="inner width">-->
+        <div class="inner width">
 <!--          <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
 <!--            <i class='bx bx-check-circle'></i>-->
 <!--            0 of 6-->
 <!--          </p>-->
 <!--          <span v-else  class="loader"></span>-->
-<!--        </div>-->
+          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>
+        </div>
       </div>
 
 <!--      <div class="separate">-->
@@ -100,7 +101,7 @@
         <div class="inner">
           <p class="text-2">
             <i class='bx bx-time-five' ></i>
-            11th February
+            17th February
           </p>
         </div>
       </div>
@@ -357,6 +358,11 @@ export default {
   color: rgb(212 235 255);
 }
 
+.processing{
+  color: rgb(212 235 255);
+  font-size: 12px;
+}
+
 .status{
   background-color: #cc0000;
   padding: 7px 7px 4px 18px;
@@ -368,6 +374,15 @@ export default {
 
 .status-amber{
   background-color: #FFBF00;
+  padding: 7px 7px 4px 18px;
+  color: #FFFFFF;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100px;
+}
+
+.status-green{
+  background-color: #4BB543;
   padding: 7px 7px 4px 18px;
   color: #FFFFFF;
   border-radius: 5px;
