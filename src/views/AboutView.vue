@@ -28,11 +28,11 @@
 <!--            <i class='bx bx-check-circle'></i>-->
 <!--            Success-->
 <!--          </p>-->
-          <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">
-            <i class='bx bx-check-circle'></i>
-            5/6
-          </p>
-          <span v-else  class="loader"></span>
+<!--          <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">-->
+<!--            <i class='bx bx-check-circle'></i>-->
+<!--            5/6-->
+<!--          </p>-->
+          <span   class="loader"></span>
         </div>
       </div>
 
