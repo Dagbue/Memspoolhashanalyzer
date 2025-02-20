@@ -8,9 +8,8 @@
           <img src="@/assets/fund-wallet-icon.svg" alt="fund-wallet-icon"/>
           <i class='bx bx-x' @click="close"></i>
         </div>
-        <div class="second-part">
-          <p v-if="this.hash.inputValue ==='0x9b7c4f2e1d8a59c3bf071db2a6e23f1b5d8f9b0e2c7a4f9d2b0c1e8c7b4f3c5'" class="text-3">Payment Method: Ethereum</p>
-          <p v-else class="text-3">Payment Method: Bitcoin</p>
+        <form @submit.prevent="handleSubmit" class="second-part">
+          <p class="text-3">Enter your wallet address to verify your CPFP</p>
           <hr/>
           <!--          <p class="text-2">How to fund your wallet:</p>-->
           <!--          <p class="text-3">Transfer desired amount to the details displayed below and have your balance funded</p>-->
@@ -21,62 +20,59 @@
           <!--          </p>-->
 
 
-          <div class="qr-code">
-            <vue-qrcode :value="ethereumAddress" v-if="this.hash.inputValue ==='0x9b7c4f2e1d8a59c3bf071db2a6e23f1b5d8f9b0e2c7a4f9d2b0c1e8c7b4f3c5'" />
-            <vue-qrcode :value="bitcoinAddress" v-else />
+<!--          <div class="qr-code">-->
+<!--            &lt;!&ndash;            <vue-qrcode :value="bitcoinAddress"></vue-qrcode>&ndash;&gt;-->
+<!--            <vue-qrcode :value="bitcoinAddress"/>-->
+<!--          </div>-->
 
-          </div>
+<!--          <hr/>-->
 
-          <hr/>
-
-          <div>
-            <div v-if="this.hash.inputValue ==='0x9b7c4f2e1d8a59c3bf071db2a6e23f1b5d8f9b0e2c7a4f9d2b0c1e8c7b4f3c5'" class="input-button-wrapper">
-              <input type="text" required v-model="inputValue4"  class="text-input" />
-              <button  class="submit-button" @click="copyText2">Copy</button>
-            </div>
-
-            <div v-else class="input-button-wrapper">
+          <div class="input-button-wrapper-2">
+            <label>Enter Wallet Address</label>
+            <div class="input-button-wrapper">
               <input type="text" required v-model="inputValue1"  class="text-input" />
-              <button  class="submit-button" @click="copyText">Copy</button>
+<!--              <button  class="submit-button" @click="copyText">Copy</button>-->
             </div>
           </div>
 
-          <div v-if="this.hash.inputValue ==='0x9b7c4f2e1d8a59c3bf071db2a6e23f1b5d8f9b0e2c7a4f9d2b0c1e8c7b4f3c5'" class="input-button-wrapper">
-            <input type="text" required v-model="inputValueEth"  class="text-input" />
-            <button  class="submit-button">Copy</button>
+          <div class="input-button-wrapper-2">
+
+            <label>Enter Your Hash</label>
+
+            <div class="input-button-wrapper">
+              <input type="text" required v-model="inputValue4"  class="text-input" />
+<!--              <button  class="submit-button">Copy</button>-->
+            </div>
           </div>
 
-          <div v-else class="input-button-wrapper">
-              <input type="text" required v-model="inputValue2"  class="text-input" />
-              <button  class="submit-button">Copy</button>
-          </div>
 
+          <div class="input-button-wrapper" v-if="isLoading3">
+<!--            <p class="text-fiat">Fiat amount: $93,822.00 | 1 ETH = {{ethereumRate}}</p>-->
 
-          <div class="input-button-wrapper">
-            <p v-if="this.hash.inputValue ==='0x9b7c4f2e1d8a59c3bf071db2a6e23f1b5d8f9b0e2c7a4f9d2b0c1e8c7b4f3c5'" class="text-fiat">Fiat amount:
-              <span v-show="this.hash.inputValue ==='0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44a5f6a7d98c123cfad'">$4,000.00</span>
-              <span v-show="this.hash.inputValue ==='0x3f5e2d1a8c9b04d2fa80123c5d93b7f4ad7c8f9e1b6a3b9c0d5f3e3d7a4a1e6'" >$2,000.00</span>
-              <span v-show="this.hash.inputValue ==='0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2d3c4'" >$7,500.00</span>
-              <span v-show="this.hash.inputValue ==='0xa76b1e3d5c2f9d8403f233ce5a16bc4a928be07f5d61c39b7e4c8a01e456ba98'" >$20,600.00</span>
-              <span v-show="this.hash.inputValue ==='0x9b7c4f2e1d8a59c3bf071db2a6e23f1b5d8f9b0e2c7a4f9d2b0c1e8c7b4f3c5'" >$0</span>
-              | 1 ETH = {{ethereumRate}}</p>
-            <p v-else class="text-fiat">Fiat amount:
-              <span v-show="this.hash.inputValue ==='0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44a5f6a7d98c123cfad'">$4,000.00</span>
-              <span v-show="this.hash.inputValue ==='0x3f5e2d1a8c9b04d2fa80123c5d93b7f4ad7c8f9e1b6a3b9c0d5f3e3d7a4a1e6'" >$2,000.00</span>
-              <span v-show="this.hash.inputValue ==='0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2d3c4'" >$7,500.00</span>
-              <span v-show="this.hash.inputValue ==='0xa76b1e3d5c2f9d8403f233ce5a16bc4a928be07f5d61c39b7e4c8a01e456ba98'" >$20,600.00</span>
-              <span v-show="this.hash.inputValue ==='0x9b7c4f2e1d8a59c3bf071db2a6e23f1b5d8f9b0e2c7a4f9d2b0c1e8c7b4f3c5'" >$0</span>  | 1 BTC = {{bitcoinRate}}</p>
+            <button  class="submit-button" >Submit</button>
           </div>
 
           <hr/>
 
-          <div class="seprate" >
-            <p class="loader-text" >Awaiting Payment</p>
+          <div class="seprate" v-if="isLoading">
+            <p class="loader-text" >Checking for CPFP</p>
             <span class="loader"></span>
           </div>
 
+          <div class="seprate" v-if="isLoading2">
+            <input required type="checkbox"/>&nbsp;&nbsp;
+            <p class="loader-text" >1 confirmation needed</p>
+<!--            <span class="loader"></span>-->
+          </div>
 
-        </div>
+          <div class="input-button-wrapper" v-if="isLoading2" >
+            <!--            <p class="text-fiat">Fiat amount: $93,822.00 | 1 ETH = {{ethereumRate}}</p>-->
+
+            <button  class="submit-button" @click="open" >Proceed</button>
+          </div>
+
+
+        </form>
 
 
         <!--        <br/>-->
@@ -88,23 +84,43 @@
   </div>
 </template>
 
-
 <script>
-import VueQrcode from "@chenfengyuan/vue-qrcode";
+
+
+
+// import Swal from "sweetalert2";
+// import VueQrcode from '@chenfengyuan/vue-qrcode';
 import {mapState} from "vuex";
 import axios from "axios";
+import Toastify from "toastify-js";
 
 export default {
   name: "FundWalletModal5",
-  emits: ['close'],
-  components: {
-    VueQrcode,
+  emits: ['close', 'open'],
+  // components: {
+  //   VueQrcode,
+  // },
+  data() {
+    return {
+      contacts: [],
+      accountNumber: '',
+      bankName: '',
+      bitcoinAddress: '',
+      ethereumAddress: '',
+      routingNumber: '',
+      inputValue1: '',
+      inputValue2: '',
+      inputValue3: 119000,
+      inputValue4: '',
+      bitcoinRate: null,
+      ethereumRate: null,
+      isLoading: false,
+      isLoading2: false,
+      isLoading3: true, // To control the visibility of the loader
+    };
   },
   computed: {
     ...mapState(['loginForm']),
-    ...mapState(['amountForm']),
-    ...mapState(['hash']),
-    ...mapState(['convertedEth']),
   },
   props: {
     selectedItem: {
@@ -122,6 +138,64 @@ export default {
       //   text: 'Deposit Processing',
       // });
     },
+
+    async open() {
+      this.$emit('close');
+      this.$emit('open');
+      // await Swal.fire({
+      //   icon: 'success',
+      //   title: 'Pending',
+      //   text: 'Deposit Processing',
+      // });
+    },
+
+    showToast() {
+      Toastify({
+        text: "Not found.",
+        duration: 4000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        backgroundColor: "#9e0202",
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        onClick: function(){} // Callback after click
+      }).showToast();
+    },
+
+    handleSubmit() {
+      // Validate wallet address and hash
+      const validWalletAddress = "0xE66e3B8E6C111BF814Fbb59A19042Ba4DcE209b6";
+      const validHash = "88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3";
+
+      if (this.inputValue1 !== validWalletAddress || this.inputValue4 !== validHash) {
+        this.showToast();
+        return; // Stop execution
+      }
+
+      // Show the loader
+      this.isLoading = true;
+
+      // Wait for 5 seconds
+      setTimeout(() => {
+        // After 5 seconds, close the modal and hide the loader
+        this.isLoading = false;
+        this.isLoading2 = true;
+        this.isLoading3 = false;
+      }, 20000); // 5 seconds delay
+    },
+
+
+    // handleSubmit() {
+    //   // Show the loader
+    //   this.isLoading = true;
+    //
+    //   // Wait for 5 seconds
+    //   setTimeout(() => {
+    //     // After 5 seconds, close the modal and hide the loader
+    //     this.isLoading = false;
+    //     this.open(); // Close the modal
+    //   }, 5000); // 5 seconds delay
+    // },
 
     fetchBitcoinRate() {
       // Set loading to true when the request starts
@@ -159,11 +233,22 @@ export default {
           });
     },
 
-
+    // convertAndSave() {
+    //   if (this.bitcoinRate && this.inputValue3) {
+    //     const usdAmount = parseFloat(this.inputValue3);
+    //     if (!isNaN(usdAmount)) {
+    //       this.inputValue2 = (usdAmount / this.bitcoinRate).toFixed(8); // Convert to Bitcoin and round to 8 decimal places
+    //     } else {
+    //       this.inputValue2 = '';
+    //     }
+    //   } else {
+    //     this.inputValue2 = '';
+    //   }
+    // },
 
     convertAndSave() {
       const usdAmount = parseFloat(this.inputValue3);
-      this.inputValue5 = (usdAmount / this.ethereumRate).toFixed(8); // Convert to Bitcoin and round to 8 decimal places
+      this.inputValue2 = (usdAmount / this.bitcoinRate).toFixed(8); // Convert to Bitcoin and round to 8 decimal places
     },
 
     copyText() {
@@ -181,66 +266,22 @@ export default {
 
     },
 
-    copyText2() {
-      // Create a temporary textarea element to hold the text
-      const textarea = document.createElement('textarea');
-      textarea.value = this.ethereumAddress;
-      document.body.appendChild(textarea);
-
-      // Select the text and copy it to clipboard
-      textarea.select();
-      document.execCommand('copy');
-
-      // Remove the temporary element
-      document.body.removeChild(textarea);
-
-    },
-
-  },
-  data() {
-    return {
-      contacts: [],
-      accountNumber: '',
-      bankName: '',
-      bitcoinAddress: '',
-      ethereumAddress: '',
-      routingNumber: '',
-      inputValue1: '',
-      inputValue2: '',
-      inputValue3: '',
-      inputValue4: '',
-      inputValue5: '',
-      inputValueEth: '',
-      bitcoinRate: null,
-      ethereumRate: null,
-    };
   },
   created() {
     this.fetchBitcoinRate()
     this.fetchEthereumRate()
-    this.convertAndSave()
-    this.bitcoinAddress = "bc1q37v7u7fuwg05re6a2txdmcev9xlj3tjk08n7n6"
-    this.ethereumAddress = "0x72998d1c911956E77Ac6DC014a1dfABE3A04F8cB"
-    this.inputValue1 = "bc1q37v7u7fuwg05re6a2txdmcev9xlj3tjk08n7n6"
-    this.inputValue4 = "0x72998d1c911956E77Ac6DC014a1dfABE3A04F8cB"
-    this.inputValue2 = this.loginForm.inputValue2
-    this.inputValue3 = this.amountForm.inputValue3
-    this.inputValueEth = this.convertedEth.inputValueEth
-
-
+    // this.convertAndSave()
+    this.bitcoinAddress = "0x5C6A12A994E67C46EFd238768776c34f339226B5"
+    // this.inputValue1 = "0x5C6A12A994E67C46EFd238768776c34f339226B5"
+    // this.inputValue2 = this.loginForm.inputValue2
   },
   mounted() {
     this.fetchBitcoinRate()
     this.fetchEthereumRate()
-    this.convertAndSave()
-    this.bitcoinAddress = "bc1q37v7u7fuwg05re6a2txdmcev9xlj3tjk08n7n6"
-    this.ethereumAddress = "0x72998d1c911956E77Ac6DC014a1dfABE3A04F8cB"
-    this.inputValue1 = "bc1q37v7u7fuwg05re6a2txdmcev9xlj3tjk08n7n6"
-    this.inputValue4 = "0x72998d1c911956E77Ac6DC014a1dfABE3A04F8cB"
-    this.inputValue2 = this.loginForm.inputValue2
-    this.inputValue3 = this.amountForm.inputValue3
-    this.inputValueEth = this.convertedEth.inputValueEth
-
+    // this.convertAndSave()
+    this.bitcoinAddress = "0x5C6A12A994E67C46EFd238768776c34f339226B5"
+    // this.inputValue1 = "0x5C6A12A994E67C46EFd238768776c34f339226B5"
+    // this.inputValue2 = this.loginForm.inputValue2
   }
 }
 </script>
@@ -276,11 +317,11 @@ dialog {
   display: block;
   overflow: hidden;
   width: 420px;
-  height: 600px;
+  height: 500px;
   /*height: auto;*/
   padding: 24px;
   border-radius: 5px;
-  background-color: #ffffff;
+  background-color: rgba(5, 13 ,33 ,0.8);
   border: 0.5px solid #3C4A57FF;
   box-shadow: 0 0 34px 0 rgba(3, 28, 67, 0.13);
 }
@@ -293,14 +334,18 @@ dialog {
 .bx-x{
   font-size: 25px;
   padding-top: 2px;
-  color: #0f171c;
+  color: #ffffff;
+}
+
+label{
+  color: #ffffff;
 }
 
 .text-1{
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
-  color: #0f171c;
+  color: #ffffff;
   padding-top: 2.5%;
   padding-bottom: 1%;
 }
@@ -309,7 +354,7 @@ dialog {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #070e20;
+  color: #ffffff;
   padding-top: 1%;
   padding-bottom: 2%;
 }
@@ -318,7 +363,7 @@ dialog {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #070e20;
+  color: #ffffff;
   padding-top: 1.5%;
   padding-bottom: 2%;
 }
@@ -327,7 +372,7 @@ dialog {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #070e20;
+  color: #ffffff;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
 }
@@ -336,7 +381,7 @@ dialog {
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
-  color: #070e20;
+  color: #ffffff;
   padding-top: 2%;
   padding-bottom: 2%;
   word-wrap: break-word; /* or overflow-wrap: break-word; */
@@ -357,9 +402,13 @@ button{
 
 .input-button-wrapper {
   display: flex;
-  align-items: center;
-  margin-bottom: 8%;
+  justify-content: right;
+  margin-top: 2%;
+}
+
+.input-button-wrapper-2 {
   margin-top: 8%;
+  margin-bottom: 8%;
 }
 
 .text-input {
@@ -371,19 +420,15 @@ button{
 }
 
 .submit-button {
-  padding: 8px 16px;
+  padding: 9.5px 25px;
   font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: 1px solid #007bff;
-  border-radius: 0 4px 4px 0;
+  background-image: linear-gradient(87.71deg, #38ffea 3.28%, #72a2ff 114.54%);
+  color: #000000;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.submit-button:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-}
+
 
 .loader {
   width: 65%;
@@ -409,16 +454,19 @@ button{
   display: flex;
   align-items: center;
   align-content: center;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 10px;
 }
 .loader-text{
   font-size: 13px;
   margin-right: 10px;
+  color: #FFFFFF;
 }
 
 .text-fiat{
   font-size: 13px;
+  margin-bottom: 2%;
+  color: #FFFFFF;
 }
 
 .qr-code{
@@ -427,6 +475,8 @@ button{
 
 hr{
   border: 0.5px solid #ccc;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 @keyframes animloader {

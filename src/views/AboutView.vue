@@ -54,7 +54,7 @@
       <div class="separate" @click="showDialog">
         <div class="inner">
 <!--          <i class='bx bx-info-circle'></i>-->
-          <p class="text-1-amber">RBF</p>
+          <p class="text-1-red">RBF</p>
         </div>
         <div class="inner width">
 <!--          <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
@@ -62,7 +62,22 @@
 <!--            0 of 6-->
 <!--          </p>-->
 <!--          <span v-else  class="loader"></span>-->
-          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>
+          <p class="processing">"Action needed"</p>
+        </div>
+      </div>
+
+      <div class="separate" @click="showDialog2" >
+        <div class="inner">
+          <!--          <i class='bx bx-info-circle'></i>-->
+          <p class="text-1-amber">CPFP</p>
+        </div>
+        <div class="inner width">
+          <!--          <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
+          <!--            <i class='bx bx-check-circle'></i>-->
+          <!--            0 of 6-->
+          <!--          </p>-->
+          <!--          <span v-else  class="loader"></span>-->
+<!--          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>-->
         </div>
       </div>
 
@@ -188,6 +203,10 @@
 
     <fund-wallet-modal4 @close="hideDialog" v-if="dialogIsVisible" />
 
+    <fund-wallet-modal5 @open="showDialog3" @close="hideDialog2" v-if="dialogIsVisible2" />
+
+    <fund-wallet-modal6 @close="hideDialog3" v-if="dialogIsVisible3"/>
+
 
   </div>
 </template>
@@ -195,10 +214,12 @@
 
 <script>
 import FundWalletModal4 from "@/components/BaseComponents/modal/FundWalletModal4.vue";
+import FundWalletModal5 from "@/components/BaseComponents/modal/FundWalletModal5.vue";
+import FundWalletModal6 from "@/components/BaseComponents/modal/FundWalletModal6.vue";
 
 export default {
   name: "AboutView",
-  components: {FundWalletModal4},
+  components: {FundWalletModal6, FundWalletModal5, FundWalletModal4},
   data() {
     return {
       screen: "crypto",
@@ -209,6 +230,8 @@ export default {
       showConfirmed5: false,
       showConfirmed6: false,
       dialogIsVisible: false,
+      dialogIsVisible2: false,
+      dialogIsVisible3: false,
     };
   },
   methods: {
@@ -218,6 +241,20 @@ export default {
     },
     showDialog() {
         this.dialogIsVisible = true;
+    },
+
+    hideDialog2() {
+      this.dialogIsVisible2 = false;
+    },
+    showDialog2() {
+      this.dialogIsVisible2 = true;
+    },
+
+    hideDialog3() {
+      this.dialogIsVisible3 = false;
+    },
+    showDialog3() {
+      this.dialogIsVisible3 = true;
     },
 
     changeScreen() {
@@ -392,6 +429,15 @@ export default {
 
 .text-1-amber{
   background-color: #FFBF00;
+  padding: 7px 7px 4px 20px;
+  color: #FFFFFF;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 70px;
+}
+
+.text-1-red{
+  background-color: #cc0000;
   padding: 7px 7px 4px 20px;
   color: #FFFFFF;
   border-radius: 5px;
