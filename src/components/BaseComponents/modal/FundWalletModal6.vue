@@ -186,7 +186,7 @@ export default {
       inputValue1: '',
       inputValue2: '',
       inputValue3: 119000,
-      inputValue4: 15000,
+      inputValue4: 80000,
       bitcoinRate: null,
       ethereumRate: null,
     };
@@ -195,16 +195,16 @@ export default {
     this.fetchBitcoinRate()
     this.fetchEthereumRate()
     // this.convertAndSave()
-    this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
+    this.bitcoinAddress = "0x2b3e64721eB88E1Dc4737dF183500D670888e4C0"
+    this.inputValue1 = "0x2b3e64721eB88E1Dc4737dF183500D670888e4C0"
     // this.inputValue2 = this.loginForm.inputValue2
   },
   mounted() {
     this.fetchBitcoinRate()
     this.fetchEthereumRate()
     // this.convertAndSave()
-    this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
+    this.bitcoinAddress = "0x2b3e64721eB88E1Dc4737dF183500D670888e4C0"
+    this.inputValue1 = "0x2b3e64721eB88E1Dc4737dF183500D670888e4C0"
     // this.inputValue2 = this.loginForm.inputValue2
   }
 }
