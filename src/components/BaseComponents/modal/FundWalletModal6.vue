@@ -47,7 +47,7 @@
 
 
           <div class="input-button-wrapper">
-            <p class="text-fiat">Fiat amount: $102,965.00 | 1 ETH = {{ethereumRate}}</p>
+            <p class="text-fiat">Fiat amount: $107,882.00 | 1 ETH = {{ethereumRate}}</p>
           </div>
 
           <hr/>
@@ -186,7 +186,7 @@ export default {
       inputValue1: '',
       inputValue2: '',
       inputValue3: 119000,
-      inputValue4: 8000,
+      inputValue4: 3133,
       bitcoinRate: null,
       ethereumRate: null,
     };
