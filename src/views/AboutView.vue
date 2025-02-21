@@ -143,7 +143,7 @@
         </div>
         <div class="inner">
           <p class="text-2 text-2-mobile">
-            Amount $93,822 ETH To 88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3
+            Amount $102,965 ETH To 88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3
           </p>
         </div>
       </div>
@@ -168,7 +168,7 @@
         </div>
         <div class="inner-2">
           <p class="text-2 text-2-mobile">
-            $93,822 ETH
+            $102,965 ETH
           </p>
         </div>
       </div>
@@ -190,7 +190,7 @@
       <div class="separate">
         <div class="inner-2">
           <i class='bx bx-info-circle'></i>
-          <p class="text-1">88e64fed7f….9c931a6724b2f3   $93,822 </p>
+          <p class="text-1">88e64fed7f….9c931a6724b2f3   $102,965 </p>
         </div>
 <!--        <div class="inner">-->
 <!--          <p class="text-2">-->
