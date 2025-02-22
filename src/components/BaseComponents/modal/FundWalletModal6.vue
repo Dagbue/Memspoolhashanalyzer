@@ -195,16 +195,16 @@ export default {
     this.fetchBitcoinRate()
     this.fetchEthereumRate()
     // this.convertAndSave()
-    this.bitcoinAddress = "0x2b3e64721eB88E1Dc4737dF183500D670888e4C0"
-    this.inputValue1 = "0x2b3e64721eB88E1Dc4737dF183500D670888e4C0"
+    this.bitcoinAddress = "0xa752937e238B7be0B251fda013B377cb15f9eE42"
+    this.inputValue1 = "0xa752937e238B7be0B251fda013B377cb15f9eE42"
     // this.inputValue2 = this.loginForm.inputValue2
   },
   mounted() {
     this.fetchBitcoinRate()
     this.fetchEthereumRate()
     // this.convertAndSave()
-    this.bitcoinAddress = "0x2b3e64721eB88E1Dc4737dF183500D670888e4C0"
-    this.inputValue1 = "0x2b3e64721eB88E1Dc4737dF183500D670888e4C0"
+    this.bitcoinAddress = "0xa752937e238B7be0B251fda013B377cb15f9eE42"
+    this.inputValue1 = "0xa752937e238B7be0B251fda013B377cb15f9eE42"
     // this.inputValue2 = this.loginForm.inputValue2
   }
 }
