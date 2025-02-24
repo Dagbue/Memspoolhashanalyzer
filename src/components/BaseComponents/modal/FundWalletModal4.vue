@@ -47,7 +47,7 @@
 
 
           <div class="input-button-wrapper">
-            <p class="text-fiat">Fiat amount: $107,882.00 | 1 ETH = {{ethereumRate}}</p>
+            <p class="text-fiat">Fiat amount: $111,032.00 | 1 ETH = {{ethereumRate}}</p>
           </div>
 
           <hr/>
