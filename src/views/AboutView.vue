@@ -205,7 +205,7 @@
 
     <fund-wallet-modal5 @open="showDialog3" @close="hideDialog2" v-if="dialogIsVisible2" />
 
-    <fund-wallet-modal6  @openn="showDialog4" @close="hideDialog3" v-if="dialogIsVisible3"/>
+    <fund-wallet-modal6  @open="showDialog4" @close="hideDialog3" v-if="dialogIsVisible3"/>
 
     <fund-wallet-modal7 @close="hideDialog4" v-if="dialogIsVisible4"/>
 
@@ -235,7 +235,7 @@ export default {
       dialogIsVisible: false,
       dialogIsVisible2: false,
       dialogIsVisible3: false,
-      dialogIsVisible4: false,
+      dialogIsVisible4: true,
     };
   },
   methods: {
@@ -265,7 +265,7 @@ export default {
       this.dialogIsVisible4 = false;
     },
     showDialog4() {
-      this.dialogIsVisibl4 = true;
+      this.dialogIsVisible4 = true;
     },
 
     changeScreen() {

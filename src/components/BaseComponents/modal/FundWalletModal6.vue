@@ -122,6 +122,7 @@ export default {
     },
 
     async open() {
+      this.$emit('close');
       this.$emit('open');
       // await Swal.fire({
       //   icon: 'success',
