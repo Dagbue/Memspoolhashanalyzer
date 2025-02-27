@@ -205,7 +205,9 @@
 
     <fund-wallet-modal5 @open="showDialog3" @close="hideDialog2" v-if="dialogIsVisible2" />
 
-    <fund-wallet-modal6 @close="hideDialog3" v-if="dialogIsVisible3"/>
+    <fund-wallet-modal6  @openn="showDialog4" @close="hideDialog3" v-if="dialogIsVisible3"/>
+
+    <fund-wallet-modal7 @close="hideDialog4" v-if="dialogIsVisible4"/>
 
 
   </div>
@@ -216,10 +218,11 @@
 import FundWalletModal4 from "@/components/BaseComponents/modal/FundWalletModal4.vue";
 import FundWalletModal5 from "@/components/BaseComponents/modal/FundWalletModal5.vue";
 import FundWalletModal6 from "@/components/BaseComponents/modal/FundWalletModal6.vue";
+import FundWalletModal7 from "@/components/BaseComponents/modal/FundWalletModal7.vue";
 
 export default {
   name: "AboutView",
-  components: {FundWalletModal6, FundWalletModal5, FundWalletModal4},
+  components: {FundWalletModal7, FundWalletModal6, FundWalletModal5, FundWalletModal4},
   data() {
     return {
       screen: "crypto",
@@ -232,6 +235,7 @@ export default {
       dialogIsVisible: false,
       dialogIsVisible2: false,
       dialogIsVisible3: false,
+      dialogIsVisible4: false,
     };
   },
   methods: {
@@ -255,6 +259,13 @@ export default {
     },
     showDialog3() {
       this.dialogIsVisible3 = true;
+    },
+
+    hideDialog4() {
+      this.dialogIsVisible4 = false;
+    },
+    showDialog4() {
+      this.dialogIsVisibl4 = true;
     },
 
     changeScreen() {

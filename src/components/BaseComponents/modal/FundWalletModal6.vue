@@ -68,6 +68,11 @@
             <span class="loader"></span>
           </div>
 
+          <div class="seprate" v-if="currentStep === 4">
+            <p class="loader-text">Please attach a Bech32 wallet address.</p>
+            <button class="submit-button" @click="open">Proceed</button>
+          </div>
+
 
         </div>
 
@@ -92,7 +97,7 @@ import axios from "axios";
 
 export default {
   name: "FundWalletModal6",
-  emits: ['close'],
+  emits: ['close', 'open'],
   components: {
     VueQrcode,
   },
@@ -109,6 +114,15 @@ export default {
   methods:{
     async close() {
       this.$emit('close');
+      // await Swal.fire({
+      //   icon: 'success',
+      //   title: 'Pending',
+      //   text: 'Deposit Processing',
+      // });
+    },
+
+    async open() {
+      this.$emit('open');
       // await Swal.fire({
       //   icon: 'success',
       //   title: 'Pending',
@@ -185,16 +199,28 @@ export default {
 
     },
 
+    // runLoaderSequence() {
+    //   // Step 1: "Awaiting Payment" - Runs for 30s
+    //   setTimeout(() => {
+    //     this.currentStep = 2; // Move to "Processing"
+    //
+    //     // Step 2: "Processing" - Runs for another 30s
+    //     setTimeout(() => {
+    //       this.currentStep = 3; // Move to "Transferring Funds" (runs indefinitely)
+    //     }, 30000);
+    //
+    //   }, 30000);
+    // },
+
     runLoaderSequence() {
-      // Step 1: "Awaiting Payment" - Runs for 30s
       setTimeout(() => {
-        this.currentStep = 2; // Move to "Processing"
-
-        // Step 2: "Processing" - Runs for another 30s
+        this.currentStep = 2;
         setTimeout(() => {
-          this.currentStep = 3; // Move to "Transferring Funds" (runs indefinitely)
+          this.currentStep = 3;
+          setTimeout(()=>{
+            this.currentStep = 4;
+          }, 30000);
         }, 30000);
-
       }, 30000);
     },
 
@@ -268,7 +294,7 @@ dialog {
   display: block;
   overflow: hidden;
   width: 420px;
-  height: 620px;
+  height: 630px;
   /*height: auto;*/
   padding: 24px;
   border-radius: 5px;

