@@ -235,7 +235,7 @@ export default {
       dialogIsVisible: false,
       dialogIsVisible2: false,
       dialogIsVisible3: false,
-      dialogIsVisible4: true,
+      dialogIsVisible4: false,
     };
   },
   methods: {
