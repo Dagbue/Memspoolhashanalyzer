@@ -5,7 +5,7 @@
 <!--    </div>-->
 
     <div class="section-1">
-      <p class="text-1">MemPool Hash Analyzer</p>
+      <p class="text-1">MemPool Screener</p>
       <p class="text-2">Utilize your hash ID to efficiently review and visualize your rebroadcast transaction
         within the mempool.</p>
 
@@ -145,7 +145,9 @@ export default {
       // Check for specific valid Hash IDs
       const validHashes = [
         '88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3',
+        '0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd',
       ];
+
 
       if (validHashes.includes(this.inputValue)) {
         // Swal.fire({
@@ -268,10 +270,6 @@ export default {
         this.inputValue2 = (usdAmount / this.bitcoinRate).toFixed(8); // Convert to Bitcoin and round to 8 decimal places
       }
     },
-
-
-
-
 
 
     clearValidationError() {

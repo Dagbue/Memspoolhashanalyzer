@@ -14,7 +14,8 @@
           <p class="text-1">Transaction Hash:</p>
         </div>
         <div class="inner">
-          <p class="text-2 text-2-mobile">88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3</p>
+<!--          <p class="text-2 text-2-mobile">88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3</p>-->
+          <p class="text-2 text-2-mobile">0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd</p>
         </div>
       </div>
 
@@ -28,58 +29,58 @@
 <!--            <i class='bx bx-check-circle'></i>-->
 <!--            Success-->
 <!--          </p>-->
-<!--          <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">-->
-<!--            <i class='bx bx-check-circle'></i>-->
-<!--            5/6-->
-<!--          </p>-->
-          <span   class="loader"></span>
-        </div>
-      </div>
-
-      <div class="separate">
-        <div class="inner">
-          <i class='bx bx-info-circle'></i>
-          <p class="text-1">Block :</p>
-        </div>
-        <div class="inner width">
-          <p v-if="showConfirmed2" class="text-2 status-green status-2-mobile">
+          <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            6 of 6
+            1/6
           </p>
           <span v-else  class="loader"></span>
         </div>
       </div>
 
-
-      <div class="separate" @click="showDialog">
-        <div class="inner">
+<!--      <div class="separate">-->
+<!--        <div class="inner">-->
 <!--          <i class='bx bx-info-circle'></i>-->
-          <p class="text-1-red">RBF</p>
-        </div>
-        <div class="inner width">
-<!--          <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
+<!--          <p class="text-1">Block :</p>-->
+<!--        </div>-->
+<!--        <div class="inner width">-->
+<!--          <p v-if="showConfirmed2" class="text-2 status-amber status-2-mobile">-->
 <!--            <i class='bx bx-check-circle'></i>-->
-<!--            0 of 6-->
+<!--            1 of 6-->
 <!--          </p>-->
 <!--          <span v-else  class="loader"></span>-->
-          <p class="processing">"Action needed"</p>
-        </div>
-      </div>
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="separate" @click="showDialog2" >
-        <div class="inner">
-          <!--          <i class='bx bx-info-circle'></i>-->
-          <p class="text-1-amber">CPFP</p>
-        </div>
-        <div class="inner width">
-          <!--          <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
-          <!--            <i class='bx bx-check-circle'></i>-->
-          <!--            0 of 6-->
-          <!--          </p>-->
-          <!--          <span v-else  class="loader"></span>-->
-<!--          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>-->
-        </div>
-      </div>
+
+<!--      <div class="separate" @click="showDialog">-->
+<!--        <div class="inner">-->
+<!--&lt;!&ndash;          <i class='bx bx-info-circle'></i>&ndash;&gt;-->
+<!--          <p class="text-1-red">RBF</p>-->
+<!--        </div>-->
+<!--        <div class="inner width">-->
+<!--&lt;!&ndash;          <p v-if="showConfirmed2" class="text-2 status status-2-mobile">&ndash;&gt;-->
+<!--&lt;!&ndash;            <i class='bx bx-check-circle'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;            0 of 6&ndash;&gt;-->
+<!--&lt;!&ndash;          </p>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span v-else  class="loader"></span>&ndash;&gt;-->
+<!--          <p class="processing">"Action needed"</p>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="separate" @click="showDialog2" >-->
+<!--        <div class="inner">-->
+<!--          &lt;!&ndash;          <i class='bx bx-info-circle'></i>&ndash;&gt;-->
+<!--          <p class="text-1-amber">CPFP</p>-->
+<!--        </div>-->
+<!--        <div class="inner width">-->
+<!--          &lt;!&ndash;          <p v-if="showConfirmed2" class="text-2 status status-2-mobile">&ndash;&gt;-->
+<!--          &lt;!&ndash;            <i class='bx bx-check-circle'></i>&ndash;&gt;-->
+<!--          &lt;!&ndash;            0 of 6&ndash;&gt;-->
+<!--          &lt;!&ndash;          </p>&ndash;&gt;-->
+<!--          &lt;!&ndash;          <span v-else  class="loader"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
 
 <!--      <div class="separate">-->
 <!--        <div class="inner">-->
@@ -116,7 +117,7 @@
         <div class="inner">
           <p class="text-2">
             <i class='bx bx-time-five' ></i>
-            17th February
+            14 May 2025
           </p>
         </div>
       </div>
@@ -142,8 +143,12 @@
           <p class="text-1">Transaction Action Amount :</p>
         </div>
         <div class="inner">
+<!--          <p class="text-2 text-2-mobile">-->
+<!--            Amount $111,032 ETH To 88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3-->
+<!--          </p>          -->
+<!--          -->
           <p class="text-2 text-2-mobile">
-            Amount $111,032 ETH To 88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3
+            Amount $462,465 ETH To 0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd
           </p>
         </div>
       </div>
@@ -157,7 +162,8 @@
           <p class="text-1">Address :</p>
         </div>
         <div class="inner-2">
-          <p class="text-2 text-2-mobile">88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3</p>
+<!--          <p class="text-2 text-2-mobile">88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3</p>          -->
+          <p class="text-2 text-2-mobile">0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd</p>
         </div>
       </div>
 
@@ -168,7 +174,7 @@
         </div>
         <div class="inner-2">
           <p class="text-2 text-2-mobile">
-            $111,032 ETH
+            $462,465 ETH
           </p>
         </div>
       </div>
@@ -190,7 +196,8 @@
       <div class="separate">
         <div class="inner-2">
           <i class='bx bx-info-circle'></i>
-          <p class="text-1">88e64fed7f….9c931a6724b2f3   $111,032 </p>
+<!--          <p class="text-1">88e64fed7f….9c931a6724b2f3   $111,032 </p>          -->
+          <p class="text-1">0xce261ae9….dfc9b775f356dd   $462,465 </p>
         </div>
 <!--        <div class="inner">-->
 <!--          <p class="text-2">-->
@@ -579,13 +586,16 @@ export default {
 
 @media (max-width: 500px){
   .status-2-mobile {
-    font-size: 11px;
+    font-size: 10px;
   }
   .text-2-mobile{
-    font-size: 15px;
+    font-size: 13px;
   }
   .text-1{
-    font-size: 16px;
+    font-size: 14px;
+  }
+  .text-2{
+    font-size: 14px;
   }
 }
 
