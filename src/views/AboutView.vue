@@ -15,7 +15,8 @@
         </div>
         <div class="inner">
 <!--          <p class="text-2 text-2-mobile">88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3</p>-->
-          <p class="text-2 text-2-mobile">0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd</p>
+<!--          <p class="text-2 text-2-mobile">0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd</p>          -->
+          <p class="text-2 text-2-mobile">0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e623</p>
         </div>
       </div>
 
@@ -37,19 +38,19 @@
         </div>
       </div>
 
-<!--      <div class="separate">-->
-<!--        <div class="inner">-->
-<!--          <i class='bx bx-info-circle'></i>-->
-<!--          <p class="text-1">Block :</p>-->
-<!--        </div>-->
-<!--        <div class="inner width">-->
-<!--          <p v-if="showConfirmed2" class="text-2 status-amber status-2-mobile">-->
-<!--            <i class='bx bx-check-circle'></i>-->
-<!--            1 of 6-->
-<!--          </p>-->
-<!--          <span v-else  class="loader"></span>-->
-<!--        </div>-->
-<!--      </div>-->
+      <div class="separate">
+        <div class="inner">
+          <i class='bx bx-info-circle'></i>
+          <p class="text-1">Block :</p>
+        </div>
+        <div class="inner width">
+          <p v-if="showConfirmed2" class="text-2 status-amber status-2-mobile">
+            <i class='bx bx-check-circle'></i>
+            1 of 6
+          </p>
+          <span v-else  class="loader"></span>
+        </div>
+      </div>
 
 
 <!--      <div class="separate" @click="showDialog">-->
@@ -117,7 +118,7 @@
         <div class="inner">
           <p class="text-2">
             <i class='bx bx-time-five' ></i>
-            14 May 2025
+            11 June 2025
           </p>
         </div>
       </div>
@@ -147,8 +148,12 @@
 <!--            Amount $111,032 ETH To 88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3-->
 <!--          </p>          -->
 <!--          -->
+<!--          <p class="text-2 text-2-mobile">-->
+<!--            Amount $462,465 ETH To 0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd-->
+<!--          </p>          -->
+
           <p class="text-2 text-2-mobile">
-            Amount $462,465 ETH To 0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd
+            Amount $911,149 ETH To 0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e623
           </p>
         </div>
       </div>
@@ -163,7 +168,8 @@
         </div>
         <div class="inner-2">
 <!--          <p class="text-2 text-2-mobile">88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3</p>          -->
-          <p class="text-2 text-2-mobile">0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd</p>
+<!--          <p class="text-2 text-2-mobile">0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd</p>          -->
+          <p class="text-2 text-2-mobile">0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e623</p>
         </div>
       </div>
 
@@ -173,8 +179,12 @@
           <p class="text-1">Value :</p>
         </div>
         <div class="inner-2">
+<!--          <p class="text-2 text-2-mobile">-->
+<!--            $462,465 ETH-->
+<!--          </p>          -->
+
           <p class="text-2 text-2-mobile">
-            $462,465 ETH
+            $911,149 ETH
           </p>
         </div>
       </div>
@@ -197,7 +207,8 @@
         <div class="inner-2">
           <i class='bx bx-info-circle'></i>
 <!--          <p class="text-1">88e64fed7f….9c931a6724b2f3   $111,032 </p>          -->
-          <p class="text-1">0xce261ae9….dfc9b775f356dd   $462,465 </p>
+<!--          <p class="text-1">0xce261ae9….dfc9b775f356dd   $462,465 </p>          -->
+          <p class="text-1">0xf7fe9366….d11465d7097e623   $911,149 </p>
         </div>
 <!--        <div class="inner">-->
 <!--          <p class="text-2">-->

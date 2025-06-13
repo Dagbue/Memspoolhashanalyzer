@@ -146,6 +146,7 @@ export default {
       const validHashes = [
         '88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3',
         '0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd',
+        '0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e623',
       ];
 
 
