@@ -79,6 +79,7 @@
 import axios from "axios";
 import Toastify from 'toastify-js'
 import 'toastify-js/src/toastify.css'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'HomeView',
@@ -117,7 +118,13 @@ export default {
       pattern: ".{64,}", // This pattern requires at least 64 characters
     };
   },
+  computed: {
+    ...mapState(['signUpFormData']),
+    ...mapGetters(['getSignUpFormData'])
+  },
   methods: {
+
+    ...mapMutations(['updateSignUpFormData']),
 
     showToast() {
       Toastify({
@@ -147,6 +154,7 @@ export default {
         '88e64fed7f94408741df632321f885ccb7f77037e72bd0exxee9c931a6724b2f3',
         '0xce261ae91000cec20715c74f2483642d43dbd254bae80f07345dfc9b775f356dd',
         '0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e623',
+        '0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465c7097e611',
       ];
 
 
@@ -157,6 +165,7 @@ export default {
         //   text: 'The Hash ID is valid and processed.',
         // });
 
+        this.updateSignUpFormData(this.inputValue);
         this.loading = true; // Show the loader
 
         // Wait for 4 seconds before showing the action text part
@@ -230,7 +239,6 @@ export default {
       this.inputValueEth = (usdAmount / this.ethereumRate).toFixed(8); // Convert to Bitcoin and round to 8 decimal places
     },
 
-
     convertAndSave() {
       // Check if inputValue is the specific address
       if (this.inputValue === "0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44a5f6a7d98c123cfad") {
@@ -272,7 +280,6 @@ export default {
       }
     },
 
-
     clearValidationError() {
       const txidInput = this.$refs.txidInput;
       txidInput.setCustomValidity(""); // Clear the validation error when the user types
@@ -288,7 +295,6 @@ export default {
         this.showActionText = true; // Show the action text part
       }, 3000);
     },
-
 
     handleClick3() {
       this.loading4 = true; // Show the loader
@@ -471,9 +477,6 @@ export default {
       this.dialogIsVisible9 = true;
     },
   },
-
-
-
 
   created() {
     this.fetchBitcoinRate()
