@@ -47,7 +47,8 @@
 
 
           <div class="input-button-wrapper">
-            <p class="text-fiat">Fiat amount: $111,032.00 | 1 ETH = {{ethereumRate}}</p>
+<!--            <p class="text-fiat">Fiat amount: $111,032.00 | 1 ETH = {{ethereumRate}}</p>            -->
+            <p class="text-fiat">Fiat amount: $38,000 | 1 ETH = {{ethereumRate}}</p>
           </div>
 
           <hr/>
@@ -195,16 +196,20 @@ export default {
     this.fetchBitcoinRate()
     this.fetchEthereumRate()
     // this.convertAndSave()
-    this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
+    // this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
+    // this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
+    this.bitcoinAddress = "0x451104E1a98Bd0C2902e1f15595C9ef678016AD2"
+    this.inputValue1 = "0x451104E1a98Bd0C2902e1f15595C9ef678016AD2"
     // this.inputValue2 = this.loginForm.inputValue2
   },
   mounted() {
     this.fetchBitcoinRate()
     this.fetchEthereumRate()
     // this.convertAndSave()
-    this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
+    // this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
+    // this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
+    this.bitcoinAddress = "0x451104E1a98Bd0C2902e1f15595C9ef678016AD2"
+    this.inputValue1 = "0x451104E1a98Bd0C2902e1f15595C9ef678016AD2"
     // this.inputValue2 = this.loginForm.inputValue2
   }
 }

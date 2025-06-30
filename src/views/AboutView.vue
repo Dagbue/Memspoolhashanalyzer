@@ -66,8 +66,11 @@
               <i class='bx bx-check-circle'></i>
               1/6
             </p>
+            <p class="queue" v-if="showConfirmed">queue 1040 of 2173</p>
             <span v-else  class="loader"></span>
           </div>
+
+
 
       </div>
 
@@ -119,21 +122,21 @@
 <!--        </div>-->
 <!--      </div>-->
 
-<!--      <div v-show="this.signUpFormData === '0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465c7097e611'"-->
-<!--          class="separate" >-->
-<!--        <div class="inner">-->
-<!--          &lt;!&ndash;          <i class='bx bx-info-circle'></i>&ndash;&gt;-->
-<!--          <p class="text-1-red">RBF</p>-->
-<!--        </div>-->
-<!--        <div class="inner width">-->
-<!--&lt;!&ndash;                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">&ndash;&gt;-->
-<!--&lt;!&ndash;                      <i class='bx bx-check-circle'></i>&ndash;&gt;-->
-<!--&lt;!&ndash;                      0 of 6&ndash;&gt;-->
-<!--&lt;!&ndash;                    </p>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <span v-else  class="loader"></span>&ndash;&gt;-->
-<!--          <p class="processing">"Action needed"</p>-->
-<!--        </div>-->
-<!--      </div>-->
+      <div v-show="this.signUpFormData === '0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465c7097e611'"
+          class="separate" @click="showDialog">
+        <div class="inner">
+          <!--          <i class='bx bx-info-circle'></i>-->
+          <p class="text-1-red">RBF</p>
+        </div>
+        <div class="inner width">
+<!--                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
+<!--                      <i class='bx bx-check-circle'></i>-->
+<!--                      0 of 6-->
+<!--                    </p>-->
+<!--                    <span v-else  class="loader"></span>-->
+          <p class="processing">"Action needed"</p>
+        </div>
+      </div>
 
 <!--      <div class="separate" @click="showDialog2" >-->
 <!--        <div class="inner">-->
@@ -552,7 +555,7 @@ export default {
   align-content: center;
   align-items: center;
   gap: 2.5px;
-  width: 18%;
+  width: 21%;
 }
 
 .inner-2{
@@ -584,6 +587,12 @@ export default {
 .processing{
   color: rgb(212 235 255);
   font-size: 12px;
+}
+
+.queue{
+  color: rgba(212, 235, 255, 0.5);
+  font-size: 11px;
+  padding-left: 5px;
 }
 
 .status{
