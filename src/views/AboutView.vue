@@ -66,7 +66,7 @@
               <i class='bx bx-check-circle'></i>
               1/6
             </p>
-            <p class="queue" v-if="showConfirmed">queue 1040 of 2173</p>
+            <p class="queue" v-if="showConfirmed">queue 1140 of 2173</p>
             <span v-else  class="loader"></span>
           </div>
 
