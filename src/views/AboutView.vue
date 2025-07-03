@@ -66,7 +66,7 @@
               <i class='bx bx-check-circle'></i>
               1/6
             </p>
-            <p class="queue" v-if="showConfirmed">queue 1140 of 2173</p>
+            <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>
             <span v-else  class="loader"></span>
           </div>
 
@@ -99,7 +99,7 @@
             class="inner width">
           <p v-if="showConfirmed2" class="text-2 status-amber status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            1 of 6
+            2 of 6
           </p>
           <span v-else  class="loader"></span>
         </div>

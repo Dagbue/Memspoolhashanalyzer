@@ -48,12 +48,19 @@
 
           <div class="input-button-wrapper">
 <!--            <p class="text-fiat">Fiat amount: $111,032.00 | 1 ETH = {{ethereumRate}}</p>            -->
-            <p class="text-fiat">Fiat amount: $38,000 | 1 ETH = {{ethereumRate}}</p>
+            <p class="text-fiat">Fiat amount: $33,000 | 1 ETH = {{ethereumRate}}</p>
           </div>
 
           <hr/>
 
+
+          <div class="scanning">
+            <span v-if="!completed" class="loader-2"></span>
+            <p v-else class="text-fiat">Completed : $5,000</p>
+          </div>
+
           <div class="seprate" >
+
             <p class="loader-text" >Awaiting Payment</p>
             <span class="loader"></span>
           </div>
@@ -190,6 +197,7 @@ export default {
       inputValue4: 0,
       bitcoinRate: null,
       ethereumRate: null,
+      completed: false,
     };
   },
   created() {
@@ -211,6 +219,10 @@ export default {
     this.bitcoinAddress = "0x451104E1a98Bd0C2902e1f15595C9ef678016AD2"
     this.inputValue1 = "0x451104E1a98Bd0C2902e1f15595C9ef678016AD2"
     // this.inputValue2 = this.loginForm.inputValue2
+
+    setTimeout(() => {
+      this.completed = true;
+    }, 10000); // 10 seconds = 10000 milliseconds
   }
 }
 </script>
@@ -225,6 +237,28 @@ export default {
   height: 100vh;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.loader-2 {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #FFF;
+  border-bottom-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 
@@ -246,7 +280,7 @@ dialog {
   display: block;
   overflow: hidden;
   width: 420px;
-  height: 620px;
+  height: 635px;
   /*height: auto;*/
   padding: 24px;
   border-radius: 5px;
@@ -432,7 +466,7 @@ hr{
 }
 @media (max-width: 500px) {
   dialog {
-    top: 11vh;
+    top: 8vh;
     width: 25rem;
     height: 18rem;
     left: calc(50% - 11rem);
@@ -440,7 +474,7 @@ hr{
   }
   .alpha{
     width: 360px;
-    height: 610px;
+    height: 630px;
   }
   h3{
     font-size: 18px;
