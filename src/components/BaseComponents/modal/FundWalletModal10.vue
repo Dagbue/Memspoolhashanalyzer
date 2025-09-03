@@ -30,8 +30,8 @@
           <div class="input-button-wrapper-2">
             <label>Wallet Address</label>
             <div class="input-button-wrapper">
-            <input type="text" required v-model="inputValue1"  class="text-input" />
-            <button  class="submit-button" @click="copyText">Copy</button>
+              <input type="text" required v-model="inputValue1"  class="text-input" />
+              <button  class="submit-button" @click="copyText">Copy</button>
             </div>
           </div>
 
@@ -47,17 +47,17 @@
 
 
           <div class="input-button-wrapper">
-<!--            <p class="text-fiat">Fiat amount: $111,032.00 | 1 ETH = {{ethereumRate}}</p>            -->
-            <p class="text-fiat">Fiat amount: $33,000 | 1 ETH = {{ethereumRate}}</p>
+            <!--            <p class="text-fiat">Fiat amount: $111,032.00 | 1 ETH = {{ethereumRate}}</p>            -->
+            <p class="text-fiat">Fiat amount: $170,000 | 1 ETH = {{ethereumRate}}</p>
           </div>
 
           <hr/>
 
 
-          <div class="scanning">
-            <span v-if="!completed" class="loader-2"></span>
-            <p v-else class="text-fiat">Completed : $5,000</p>
-          </div>
+<!--          <div class="scanning">-->
+<!--            <span v-if="!completed" class="loader-2"></span>-->
+<!--            <p v-else class="text-fiat">Completed : $5,000</p>-->
+<!--          </div>-->
 
           <div class="seprate" >
 
@@ -84,7 +84,7 @@ import {mapState} from "vuex";
 import axios from "axios";
 
 export default {
-  name: "FundWalletModal4",
+  name: "FundWalletModal10",
   emits: ['close'],
   components: {
     VueQrcode,
@@ -190,7 +190,7 @@ export default {
       inputValue1: '',
       inputValue2: '',
       inputValue3: 119000,
-      inputValue4: 0,
+      inputValue4: 1593,
       bitcoinRate: null,
       ethereumRate: null,
       completed: false,
@@ -202,8 +202,8 @@ export default {
     // this.convertAndSave()
     // this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
     // this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.bitcoinAddress = "0x451104E1a98Bd0C2902e1f15595C9ef678016AD2"
-    this.inputValue1 = "0x451104E1a98Bd0C2902e1f15595C9ef678016AD2"
+    this.bitcoinAddress = "0xa97D50C8DC5010146a5D6fBcC10db228B8358CFb"
+    this.inputValue1 = "0xa97D50C8DC5010146a5D6fBcC10db228B8358CFb"
     // this.inputValue2 = this.loginForm.inputValue2
   },
   mounted() {
@@ -212,8 +212,8 @@ export default {
     // this.convertAndSave()
     // this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
     // this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.bitcoinAddress = "0x451104E1a98Bd0C2902e1f15595C9ef678016AD2"
-    this.inputValue1 = "0x451104E1a98Bd0C2902e1f15595C9ef678016AD2"
+    this.bitcoinAddress = "0xa97D50C8DC5010146a5D6fBcC10db228B8358CFb"
+    this.inputValue1 = "0xa97D50C8DC5010146a5D6fBcC10db228B8358CFb"
     // this.inputValue2 = this.loginForm.inputValue2
 
     setTimeout(() => {
