@@ -286,37 +286,37 @@ export default {
       txidInput.setCustomValidity(""); // Clear the validation error when the user types
     },
 
-    handleClick() {
-      console.log('Input Value:', this.inputValue);
-      this.loading = true; // Show the loader
+    // handleClick() {
+    //   console.log('Input Value:', this.inputValue);
+    //   this.loading = true; // Show the loader
+    //
+    //   // Wait for 3 seconds before showing the action text part
+    //   setTimeout(() => {
+    //     this.loading = false; // Hide the loader
+    //     this.showActionText = true; // Show the action text part
+    //   }, 3000);
+    // },
 
-      // Wait for 3 seconds before showing the action text part
-      setTimeout(() => {
-        this.loading = false; // Hide the loader
-        this.showActionText = true; // Show the action text part
-      }, 3000);
-    },
+    // handleClick3() {
+    //   this.loading4 = true; // Show the loader
+    //
+    //   // Wait for 3 seconds before showing the action text part
+    //   setTimeout(() => {
+    //     this.loading4 = false; // Hide the loader
+    //     this.showActionText2 = true; // Show the action text part
+    //   }, 3000);
+    // },
 
-    handleClick3() {
-      this.loading4 = true; // Show the loader
-
-      // Wait for 3 seconds before showing the action text part
-      setTimeout(() => {
-        this.loading4 = false; // Hide the loader
-        this.showActionText2 = true; // Show the action text part
-      }, 3000);
-    },
-
-    handleClick4() {
-      console.log('Input Value:', this.inputValue);
-      this.loading6 = true; // Show the loader
-
-      // Wait for 3 seconds before showing the action text part
-      setTimeout(() => {
-        this.loading6 = false; // Hide the loader
-        this.showActionText4 = true; // Show the action text part
-      }, 3000);
-    },
+    // handleClick4() {
+    //   console.log('Input Value:', this.inputValue);
+    //   this.loading6 = true; // Show the loader
+    //
+    //   // Wait for 3 seconds before showing the action text part
+    //   setTimeout(() => {
+    //     this.loading6 = false; // Hide the loader
+    //     this.showActionText4 = true; // Show the action text part
+    //   }, 3000);
+    // },
 
     handleClick5() {
       if (this.inputValue === '0x186fdefc2952480f6739b7a30d5028cb1pc8497412edc9f99cec25c05c86df54') {
