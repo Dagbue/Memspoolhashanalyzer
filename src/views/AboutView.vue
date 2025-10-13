@@ -30,8 +30,8 @@
           <p v-show="this.signUpFormData === '0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638'"
              class="text-2 text-2-mobile">0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638</p>
 
-          <p v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
-             class="text-2 text-2-mobile">0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3</p>
+          <p v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
+             class="text-2 text-2-mobile">0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0</p>
 
           <p v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
              class="text-2 text-2-mobile">0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc</p>
@@ -100,12 +100,12 @@
         </div>
 
 
-        <div v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
+        <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="inner">
           <i class='bx bx-info-circle'></i>
           <p class="text-1">confirmation :</p>
         </div>
-        <div v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
+        <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="inner width">
           <!--          <p v-if="showConfirmed" class="text-2 status-3 status-2-mobile">-->
           <!--            <i class='bx bx-check-circle'></i>-->
@@ -189,12 +189,12 @@
           <span v-else  class="loader"></span>
         </div>
 
-        <div v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
+        <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="inner">
           <i class='bx bx-info-circle'></i>
           <p class="text-1">Block :</p>
         </div>
-        <div v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
+        <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="inner width">
           <p v-if="showConfirmed2" class="text-2 status-green status-2-mobile">
             <i class='bx bx-check-circle'></i>
@@ -267,7 +267,7 @@
         </div>
       </div>
 
-      <div v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
+      <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
            class="separate" >
         <div class="inner">
           <!--          <i class='bx bx-info-circle'></i>-->
@@ -382,16 +382,16 @@
         </div>
 
 
-        <div v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
+        <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="inner">
           <i class='bx bx-info-circle'></i>
           <p class="text-1">TimeStamp :</p>
         </div>
-        <div v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
+        <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="inner" style="width: 100%;">
           <p class="text-2">
             <i class='bx bx-time-five' ></i>
-            Oct 13th 2025 . Time :1:18pm
+            Oct 13th 2025 . Time : 1:18pm
           </p>
         </div>
 
@@ -404,7 +404,7 @@
              class="inner" style="width: 100%;">
           <p class="text-2">
             <i class='bx bx-time-five' ></i>
-            Oct 13th 2025 . Time :22:43pm
+            Oct 13th 2025 . Time : 1:40pm
           </p>
         </div>
       </div>
@@ -449,15 +449,15 @@
             Amount $170,000 ETH To 0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638
           </p>
 
-          <p v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
+          <p v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="text-2 text-2-mobile">
-            Amount $100 ETH To 0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3
+            Amount $100 ETH To 0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0
           </p>
 
 
           <p v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
              class="text-2 text-2-mobile">
-            Amount $100 ETH To 0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc
+            Amount $359,918 ETH To 0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc
           </p>
 
         </div>
@@ -488,8 +488,8 @@
           <p v-show="this.signUpFormData === '0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638'"
              class="text-2 text-2-mobile">0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638</p>
 
-          <p v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
-             class="text-2 text-2-mobile">0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3</p>
+          <p v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
+             class="text-2 text-2-mobile">0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0</p>
 
           <p v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
              class="text-2 text-2-mobile">0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc</p>
@@ -577,12 +577,12 @@
           </p>
         </div>
 
-        <div v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
+        <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
             class="inner-2">
           <i class='bx bx-info-circle'></i>
           <p class="text-1">Value :</p>
         </div>
-        <div v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
+        <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
             class="inner-2">
           <!--          <p class="text-2 text-2-mobile">-->
           <!--            $462,465 ETH-->
@@ -605,7 +605,7 @@
           <!--          </p>          -->
 
           <p class="text-2 text-2-mobile">
-            $100 ETH
+            $359,918 ETH
           </p>
         </div>
       </div>
@@ -640,11 +640,11 @@
           <p v-show="this.signUpFormData === '0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638'"
              class="text-1">0xf7fe9366….d11465d7097e638  $170,000 </p>
 
-          <p v-show="this.signUpFormData === '0x3a4f9d2b1e8c7a9d4e1b12c7f5a8a6b9c1f7a2d3d4e5f2b7a6c8f1d9b2a3d3'"
-             class="text-1">0x3a4f9d2b….2b7a6c8f1d9b2a3d3  $100 </p>
+          <p v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
+             class="text-1">0x10731b962….5dec3d9db9497c0  $100 </p>
 
           <p v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
-             class="text-1">0x9f8d5a2c….7d98f123afcc  $100 </p>
+             class="text-1">0x9f8d5a2c….7d98f123afcc  $359,918 </p>
         </div>
 <!--        <div class="inner">-->
 <!--          <p class="text-2">-->
