@@ -19,7 +19,6 @@
           <!--            </span> for documentation and to boost the funding process-->
           <!--          </p>-->
 
-
           <div class="qr-code">
             <!--            <vue-qrcode :value="bitcoinAddress"></vue-qrcode>-->
             <vue-qrcode :value="bitcoinAddress"/>
@@ -45,7 +44,6 @@
             </div>
           </div>
 
-
           <div class="input-button-wrapper">
             <!--            <p class="text-fiat">Fiat amount: $111,032.00 | 1 ETH = {{ethereumRate}}</p>            -->
             <p class="text-fiat">Fiat amount: $359,918 | 1 ETH = {{ethereumRate}}</p>
@@ -53,18 +51,18 @@
 
           <hr/>
 
-
           <!--          <div class="scanning">-->
           <!--            <span v-if="!completed" class="loader-2"></span>-->
           <!--            <p v-else class="text-fiat">Completed : $5,000</p>-->
           <!--          </div>-->
 
-          <div class="seprate" >
-
-            <p class="loader-text" >Awaiting Payment</p>
-            <span class="loader"></span>
+          <div class="seprate">
+            <template v-if="!completed">
+              <p class="loader-text">Awaiting Payment</p>
+              <span class="loader"></span>
+            </template>
+            <p v-else class="loader-text" >Confirmed</p>
           </div>
-
 
         </div>
 
@@ -75,9 +73,6 @@
 </template>
 
 <script>
-
-
-
 // import Swal from "sweetalert2";
 import VueQrcode from '@chenfengyuan/vue-qrcode';
 import {mapState} from "vuex";
@@ -218,10 +213,11 @@ export default {
 
     setTimeout(() => {
       this.completed = true;
-    }, 10000); // 10 seconds = 10000 milliseconds
+    }, 20000); // 20 seconds = 20000 milliseconds
   }
 }
 </script>
+
 
 <style scoped >
 
