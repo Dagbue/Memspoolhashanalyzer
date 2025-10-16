@@ -131,9 +131,9 @@
           <!--            <i class='bx bx-check-circle'></i>-->
           <!--            Success-->
           <!--          </p>-->
-          <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">
+          <p v-if="showConfirmed" class="text-2 status-green status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            2/6
+            6/6
           </p>
 <!--          <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>-->
           <span v-else  class="loader"></span>
@@ -284,10 +284,10 @@
       </div>
 
       <div v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
-           class="separate" @click="showDialog6" >
+           class="separate" @click="showDialog6">
         <div class="inner">
           <!--          <i class='bx bx-info-circle'></i>-->
-          <p class="text-1-red">RBF</p>
+          <p class="text-1-green">RBF</p>
         </div>
         <div class="inner width">
           <!--                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
@@ -295,24 +295,28 @@
           <!--                      0 of 6-->
           <!--                    </p>-->
           <!--                    <span v-else  class="loader"></span>-->
-          <p class="processing">"Action needed"</p>
+          <p class="processing">"queue 1011 of 1020"</p>
         </div>
       </div>
 
-<!--      <div class="separate" @click="showDialog2" >-->
-<!--        <div class="inner">-->
-<!--          &lt;!&ndash;          <i class='bx bx-info-circle'></i>&ndash;&gt;-->
-<!--          <p class="text-1-amber">CPFP</p>-->
-<!--        </div>-->
+
+
+
+      <div v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
+          class="separate" @click="showDialog7" >
+        <div class="inner">
+          <!--          <i class='bx bx-info-circle'></i>-->
+          <p class="text-1-red">CPFP</p>
+        </div>
 <!--        <div class="inner width">-->
-<!--          &lt;!&ndash;          <p v-if="showConfirmed2" class="text-2 status status-2-mobile">&ndash;&gt;-->
-<!--          &lt;!&ndash;            <i class='bx bx-check-circle'></i>&ndash;&gt;-->
-<!--          &lt;!&ndash;            0 of 6&ndash;&gt;-->
-<!--          &lt;!&ndash;          </p>&ndash;&gt;-->
-<!--          &lt;!&ndash;          <span v-else  class="loader"></span>&ndash;&gt;-->
+<!--                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
+<!--                      <i class='bx bx-check-circle'></i>-->
+<!--                      0 of 6-->
+<!--                    </p>-->
+<!--                    <span v-else  class="loader"></span>-->
 <!--&lt;!&ndash;          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>&ndash;&gt;-->
 <!--        </div>-->
-<!--      </div>-->
+      </div>
 
 <!--      <div class="separate">-->
 <!--        <div class="inner">-->
@@ -666,6 +670,8 @@
 
     <fund-wallet-modal7 @close="hideDialog4" v-if="dialogIsVisible4"/>
 
+    <fund-wallet-modal12 @close="hideDialog7" v-if="dialogIsVisible7"/>
+
 
   </div>
 </template>
@@ -679,10 +685,12 @@ import FundWalletModal7 from "@/components/BaseComponents/modal/FundWalletModal7
 import {mapGetters, mapState} from "vuex";
 import FundWalletModal10 from "@/components/BaseComponents/modal/FundWalletModal10.vue";
 import FundWalletModal11 from "@/components/BaseComponents/modal/FundWalletModal11.vue";
+import FundWalletModal12 from "@/components/BaseComponents/modal/FundWalletModal12.vue";
 
 export default {
   name: "AboutView",
   components: {
+    FundWalletModal12,
     FundWalletModal11,
     FundWalletModal10, FundWalletModal7, FundWalletModal6, FundWalletModal5, FundWalletModal4},
   data() {
@@ -700,6 +708,7 @@ export default {
       dialogIsVisible4: false,
       dialogIsVisible5: false,
       dialogIsVisible6: false,
+      dialogIsVisible7: false,
     };
   },
   computed:{
@@ -748,6 +757,13 @@ export default {
     },
     showDialog6() {
       this.dialogIsVisible6 = true;
+    },
+
+    hideDialog7() {
+      this.dialogIsVisible7 = false;
+    },
+    showDialog7() {
+      this.dialogIsVisible7 = true;
     },
 
     changeScreen() {

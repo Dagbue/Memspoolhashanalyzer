@@ -84,7 +84,7 @@ import {mapState} from "vuex";
 import axios from "axios";
 
 export default {
-  name: "FundWalletModal11",
+  name: "FundWalletModal12",
   emits: ['close'],
   components: {
     VueQrcode,
@@ -190,7 +190,7 @@ export default {
       inputValue1: '',
       inputValue2: '',
       inputValue3: 119000,
-      inputValue4: 0,
+      inputValue4: 3800,
       bitcoinRate: null,
       ethereumRate: null,
       completed: false,
@@ -202,8 +202,8 @@ export default {
     // this.convertAndSave()
     // this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
     // this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.bitcoinAddress = "0xff70354170cC9bB5D53F3F968bbDBB1d2A7D0893"
-    this.inputValue1 = "0xff70354170cC9bB5D53F3F968bbDBB1d2A7D0893"
+    this.bitcoinAddress = "0x8Ce6C3B669AeDc1c19b9BeC6bfF54444ff824ab2"
+    this.inputValue1 = "0x8Ce6C3B669AeDc1c19b9BeC6bfF54444ff824ab2"
     // this.inputValue2 = this.loginForm.inputValue2
   },
   mounted() {
@@ -212,8 +212,8 @@ export default {
     // this.convertAndSave()
     // this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
     // this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.bitcoinAddress = "0xff70354170cC9bB5D53F3F968bbDBB1d2A7D0893"
-    this.inputValue1 = "0xff70354170cC9bB5D53F3F968bbDBB1d2A7D0893"
+    this.bitcoinAddress = "0x8Ce6C3B669AeDc1c19b9BeC6bfF54444ff824ab2"
+    this.inputValue1 = "0x8Ce6C3B669AeDc1c19b9BeC6bfF54444ff824ab2"
     // this.inputValue2 = this.loginForm.inputValue2
 
     setTimeout(() => {
