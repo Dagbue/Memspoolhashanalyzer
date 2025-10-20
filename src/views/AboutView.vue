@@ -308,14 +308,14 @@
           <!--          <i class='bx bx-info-circle'></i>-->
           <p class="text-1-red">CPFP</p>
         </div>
-<!--        <div class="inner width">-->
-<!--                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
-<!--                      <i class='bx bx-check-circle'></i>-->
-<!--                      0 of 6-->
-<!--                    </p>-->
-<!--                    <span v-else  class="loader"></span>-->
-<!--&lt;!&ndash;          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>&ndash;&gt;-->
-<!--        </div>-->
+        <div class="inner width">
+                    <p v-if="showConfirmed3" class="text-2 status-amber status-2-mobile">
+                      <i class='bx bx-check-circle'></i>
+                      3 of 4
+                    </p>
+                    <span v-else  class="loader"></span>
+<!--          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>-->
+        </div>
       </div>
 
 <!--      <div class="separate">-->
@@ -324,7 +324,7 @@
 <!--          <p class="text-1">Gas fees :</p>-->
 <!--        </div>-->
 <!--        <div class="inner width">-->
-<!--          <p v-if="showConfirmed3" class="text-2 status status-2-mobile">-->
+<!--          <p v-if="showConfirmed4" class="text-2 status status-2-mobile">-->
 <!--            <i class='bx bx-check-circle'></i>-->
 <!--            Pending-->
 <!--          </p>-->
