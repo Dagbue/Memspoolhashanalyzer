@@ -30,6 +30,9 @@
           <p v-show="this.signUpFormData === '0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638'"
              class="text-2 text-2-mobile">0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638</p>
 
+          <p v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+             class="text-2 text-2-mobile">0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa</p>
+
           <p v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="text-2 text-2-mobile">0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0</p>
 
@@ -94,6 +97,25 @@
           <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">
             <i class='bx bx-check-circle'></i>
             3/6
+          </p>
+<!--          <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>-->
+          <span v-else  class="loader"></span>
+        </div>
+
+        <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+             class="inner">
+          <i class='bx bx-info-circle'></i>
+          <p class="text-1">confirmation :</p>
+        </div>
+        <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+             class="inner width">
+          <!--          <p v-if="showConfirmed" class="text-2 status-3 status-2-mobile">-->
+          <!--            <i class='bx bx-check-circle'></i>-->
+          <!--            Success-->
+          <!--          </p>-->
+          <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">
+            <i class='bx bx-check-circle'></i>
+            1/6
           </p>
 <!--          <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>-->
           <span v-else  class="loader"></span>
@@ -189,6 +211,20 @@
           <span v-else  class="loader"></span>
         </div>
 
+        <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+             class="inner">
+          <i class='bx bx-info-circle'></i>
+          <p class="text-1">Block :</p>
+        </div>
+        <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+             class="inner width">
+          <p v-if="showConfirmed2" class="text-2 status-amber status-2-mobile">
+            <i class='bx bx-check-circle'></i>
+            1 of 6
+          </p>
+          <span v-else  class="loader"></span>
+        </div>
+
         <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="inner">
           <i class='bx bx-info-circle'></i>
@@ -266,6 +302,23 @@
           <p class="processing">"Action needed"</p>
         </div>
       </div>
+
+<!--      <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"-->
+<!--           class="separate" @click="showDialog8">-->
+<!--        <div class="inner">-->
+<!--          &lt;!&ndash;          <i class='bx bx-info-circle'></i>&ndash;&gt;-->
+<!--          <p class="text-1-red">RBF</p>-->
+<!--        </div>-->
+<!--        <div class="inner width">-->
+<!--          &lt;!&ndash;                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">&ndash;&gt;-->
+<!--          &lt;!&ndash;                      <i class='bx bx-check-circle'></i>&ndash;&gt;-->
+<!--          &lt;!&ndash;                      0 of 6&ndash;&gt;-->
+<!--          &lt;!&ndash;                    </p>&ndash;&gt;-->
+<!--          &lt;!&ndash;                    <span v-else  class="loader"></span>&ndash;&gt;-->
+<!--          <p class="processing" v-if="showConfirmed3" >"Action needed"</p>-->
+<!--          <span v-else  class="loader"></span>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
            class="separate" >
@@ -385,6 +438,19 @@
           </p>
         </div>
 
+        <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+             class="inner">
+          <i class='bx bx-info-circle'></i>
+          <p class="text-1">TimeStamp :</p>
+        </div>
+        <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+             class="inner" style="width: 100%;">
+          <p class="text-2">
+            <i class='bx bx-time-five' ></i>
+            Jan 21th 2026 . Time : 11 : 44 am
+          </p>
+        </div>
+
 
         <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="inner">
@@ -453,6 +519,11 @@
             Amount $170,000 ETH To 0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638
           </p>
 
+          <p v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+             class="text-2 text-2-mobile">
+            Amount $628,181 ETH To 0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa
+          </p>
+
           <p v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="text-2 text-2-mobile">
             Amount $100 ETH To 0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0
@@ -491,6 +562,9 @@
 
           <p v-show="this.signUpFormData === '0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638'"
              class="text-2 text-2-mobile">0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638</p>
+
+          <p v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+             class="text-2 text-2-mobile">0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa</p>
 
           <p v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="text-2 text-2-mobile">0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0</p>
@@ -581,6 +655,22 @@
           </p>
         </div>
 
+        <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+            class="inner-2">
+          <i class='bx bx-info-circle'></i>
+          <p class="text-1">Value :</p>
+        </div>
+        <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+            class="inner-2">
+          <!--          <p class="text-2 text-2-mobile">-->
+          <!--            $462,465 ETH-->
+          <!--          </p>          -->
+
+          <p class="text-2 text-2-mobile">
+            $628,181 ETH
+          </p>
+        </div>
+
         <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
             class="inner-2">
           <i class='bx bx-info-circle'></i>
@@ -644,6 +734,9 @@
           <p v-show="this.signUpFormData === '0xf7fe93668cf7b4b494ff73fe22c7b24cb583980baab5ad6e6d11465d7097e638'"
              class="text-1">0xf7fe9366….d11465d7097e638  $170,000 </p>
 
+          <p v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+             class="text-1">0x757b195e9b08….04561df5dc8aa  $628,181 </p>
+
           <p v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
              class="text-1">0x10731b962….5dec3d9db9497c0  $100 </p>
 
@@ -661,6 +754,8 @@
 
     <fund-wallet-modal4 @close="hideDialog" v-if="dialogIsVisible" />
     <fund-wallet-modal10 @close="hideDialog5" v-if="dialogIsVisible5"/>
+
+    <fund-wallet-modal13 @close="hideDialog8" v-if="dialogIsVisible8"/>
 
     <fund-wallet-modal11 @close="hideDialog6" v-if="dialogIsVisible6"/>
 
@@ -686,13 +781,20 @@ import {mapGetters, mapState} from "vuex";
 import FundWalletModal10 from "@/components/BaseComponents/modal/FundWalletModal10.vue";
 import FundWalletModal11 from "@/components/BaseComponents/modal/FundWalletModal11.vue";
 import FundWalletModal12 from "@/components/BaseComponents/modal/FundWalletModal12.vue";
+import FundWalletModal13 from "@/components/BaseComponents/modal/FundWalletModal13.vue";
 
 export default {
   name: "AboutView",
   components: {
+    FundWalletModal13,
     FundWalletModal12,
     FundWalletModal11,
-    FundWalletModal10, FundWalletModal7, FundWalletModal6, FundWalletModal5, FundWalletModal4},
+    FundWalletModal10,
+    FundWalletModal7,
+    FundWalletModal6,
+    FundWalletModal5,
+    FundWalletModal4
+  },
   data() {
     return {
       screen: "crypto",
@@ -709,6 +811,7 @@ export default {
       dialogIsVisible5: false,
       dialogIsVisible6: false,
       dialogIsVisible7: false,
+      dialogIsVisible8: false,
     };
   },
   computed:{
@@ -764,6 +867,14 @@ export default {
     },
     showDialog7() {
       this.dialogIsVisible7 = true;
+    },
+
+
+    hideDialog8() {
+      this.dialogIsVisible8 = false;
+    },
+    showDialog8() {
+      this.dialogIsVisible8 = true;
     },
 
     changeScreen() {
