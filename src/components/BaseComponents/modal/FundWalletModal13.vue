@@ -190,7 +190,7 @@ export default {
       inputValue1: '',
       inputValue2: '',
       inputValue3: 119000,
-      inputValue4: 1070,
+      inputValue4: 9499,
       bitcoinRate: null,
       ethereumRate: null,
       completed: false,
@@ -202,8 +202,8 @@ export default {
     // this.convertAndSave()
     // this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
     // this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.bitcoinAddress = "0xa97D50C8DC5010146a5D6fBcC10db228B8358CFb"
-    this.inputValue1 = "0xa97D50C8DC5010146a5D6fBcC10db228B8358CFb"
+    this.bitcoinAddress = "0x69Db5Da539921ade36B5A31E45e082572382Ec7D"
+    this.inputValue1 = "0x69Db5Da539921ade36B5A31E45e082572382Ec7D"
     // this.inputValue2 = this.loginForm.inputValue2
   },
   mounted() {
@@ -212,8 +212,8 @@ export default {
     // this.convertAndSave()
     // this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
     // this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.bitcoinAddress = "0xa97D50C8DC5010146a5D6fBcC10db228B8358CFb"
-    this.inputValue1 = "0xa97D50C8DC5010146a5D6fBcC10db228B8358CFb"
+    this.bitcoinAddress = "0x69Db5Da539921ade36B5A31E45e082572382Ec7D"
+    this.inputValue1 = "0x69Db5Da539921ade36B5A31E45e082572382Ec7D"
     // this.inputValue2 = this.loginForm.inputValue2
 
     setTimeout(() => {

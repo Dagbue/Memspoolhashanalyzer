@@ -38,6 +38,9 @@
 
           <p v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
              class="text-2 text-2-mobile">0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc</p>
+
+          <p v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="text-2 text-2-mobile">0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0</p>
         </div>
       </div>
 
@@ -162,7 +165,24 @@
         </div>
 
 
-
+        <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="inner">
+          <i class='bx bx-info-circle'></i>
+          <p class="text-1">confirmation :</p>
+        </div>
+        <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="inner width">
+          <!--          <p v-if="showConfirmed" class="text-2 status-3 status-2-mobile">-->
+          <!--            <i class='bx bx-check-circle'></i>-->
+          <!--            Success-->
+          <!--          </p>-->
+          <p v-if="showConfirmed" class="text-2 status-green status-2-mobile">
+            <i class='bx bx-check-circle'></i>
+            6/6
+          </p>
+          <!--          <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>-->
+          <span v-else  class="loader"></span>
+        </div>
 
 
       </div>
@@ -252,6 +272,23 @@
           </p>
           <span v-else  class="loader"></span>
         </div>
+
+        <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="inner">
+          <i class='bx bx-info-circle'></i>
+          <p class="text-1">Block :</p>
+        </div>
+        <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="inner width">
+          <div v-if="showConfirmed2" class=" width" >
+            <p  class="text-2 status-green status-2-mobile">
+              <i class='bx bx-check-circle'></i>
+              6 of 6
+            </p>
+            <p style="color: rgb(212 235 255);font-size: 12px;">success</p>
+          </div>
+          <span v-else  class="loader"></span>
+        </div>
       </div>
 
 
@@ -303,22 +340,22 @@
         </div>
       </div>
 
-<!--      <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"-->
-<!--           class="separate" @click="showDialog8">-->
-<!--        <div class="inner">-->
-<!--          &lt;!&ndash;          <i class='bx bx-info-circle'></i>&ndash;&gt;-->
-<!--          <p class="text-1-red">RBF</p>-->
-<!--        </div>-->
-<!--        <div class="inner width">-->
-<!--          &lt;!&ndash;                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">&ndash;&gt;-->
-<!--          &lt;!&ndash;                      <i class='bx bx-check-circle'></i>&ndash;&gt;-->
-<!--          &lt;!&ndash;                      0 of 6&ndash;&gt;-->
-<!--          &lt;!&ndash;                    </p>&ndash;&gt;-->
-<!--          &lt;!&ndash;                    <span v-else  class="loader"></span>&ndash;&gt;-->
-<!--          <p class="processing" v-if="showConfirmed3" >"Action needed"</p>-->
+      <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+           class="separate" @click="showDialog8">
+        <div class="inner">
+          <!--          <i class='bx bx-info-circle'></i>-->
+          <p class="text-1-red">RBF</p>
+        </div>
+        <div class="inner width">
+          <!--                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
+          <!--                      <i class='bx bx-check-circle'></i>-->
+          <!--                      0 of 6-->
+          <!--                    </p>-->
+          <!--                    <span v-else  class="loader"></span>-->
+          <p class="processing"  >"Action needed"</p>
 <!--          <span v-else  class="loader"></span>-->
-<!--        </div>-->
-<!--      </div>-->
+        </div>
+      </div>
 
       <div v-show="this.signUpFormData === '0x10731b9621f3245beb46085446420e35b5723732203ab7c165dec3d9db9497c0'"
            class="separate" >
@@ -353,7 +390,21 @@
       </div>
 
 
-
+<!--      <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"-->
+<!--           class="separate" >-->
+<!--        <div class="inner">-->
+<!--          &lt;!&ndash;          <i class='bx bx-info-circle'></i>&ndash;&gt;-->
+<!--          <p class="text-1-green">RBF</p>-->
+<!--        </div>-->
+<!--        <div class="inner width">-->
+<!--          &lt;!&ndash;                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">&ndash;&gt;-->
+<!--          &lt;!&ndash;                      <i class='bx bx-check-circle'></i>&ndash;&gt;-->
+<!--          &lt;!&ndash;                      0 of 6&ndash;&gt;-->
+<!--          &lt;!&ndash;                    </p>&ndash;&gt;-->
+<!--          &lt;!&ndash;                    <span v-else  class="loader"></span>&ndash;&gt;-->
+<!--          <p class="processing">"queue 1011 of 1020"</p>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <div v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
           class="separate" @click="showDialog7" >
@@ -370,6 +421,8 @@
 <!--          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>-->
         </div>
       </div>
+
+
 
 <!--      <div class="separate">-->
 <!--        <div class="inner">-->
@@ -477,6 +530,19 @@
             Oct 13th 2025 . Time : 1:40pm
           </p>
         </div>
+
+        <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="inner">
+          <i class='bx bx-info-circle'></i>
+          <p class="text-1">TimeStamp :</p>
+        </div>
+        <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="inner" style="width: 100%;">
+          <p class="text-2">
+            <i class='bx bx-time-five' ></i>
+            Jan 21th 2026 . Time : 12 : 27 pm
+          </p>
+        </div>
       </div>
 
       <hr class="line"/>
@@ -535,6 +601,11 @@
             Amount $359,918 ETH To 0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc
           </p>
 
+          <p v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="text-2 text-2-mobile">
+            Amount $100 ETH To 0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0
+          </p>
+
         </div>
       </div>
 
@@ -571,6 +642,9 @@
 
           <p v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
              class="text-2 text-2-mobile">0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc</p>
+
+          <p v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="text-2 text-2-mobile">0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0</p>
         </div>
       </div>
 
@@ -702,6 +776,22 @@
             $359,918 ETH
           </p>
         </div>
+
+        <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+            class="inner-2">
+          <i class='bx bx-info-circle'></i>
+          <p class="text-1">Value :</p>
+        </div>
+        <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+            class="inner-2">
+          <!--          <p class="text-2 text-2-mobile">-->
+          <!--            $462,465 ETH-->
+          <!--          </p>          -->
+
+          <p class="text-2 text-2-mobile">
+            $100 ETH
+          </p>
+        </div>
       </div>
 
     </div>
@@ -742,6 +832,9 @@
 
           <p v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
              class="text-1">0x9f8d5a2c….7d98f123afcc  $359,918 </p>
+
+          <p v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="text-1">0x180d34a9411295….5d8b2c6b07a0  $100 </p>
         </div>
 <!--        <div class="inner">-->
 <!--          <p class="text-2">-->
