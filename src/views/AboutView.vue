@@ -118,7 +118,7 @@
           <!--          </p>-->
           <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            1/6
+            2/6
           </p>
 <!--          <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>-->
           <span v-else  class="loader"></span>
@@ -240,7 +240,7 @@
              class="inner width">
           <p v-if="showConfirmed2" class="text-2 status-amber status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            1 of 6
+            2 of 6
           </p>
           <span v-else  class="loader"></span>
         </div>
@@ -280,15 +280,38 @@
         </div>
         <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
              class="inner width">
-          <div v-if="showConfirmed2" class=" width" >
-            <p  class="text-2 status-green status-2-mobile">
-              <i class='bx bx-check-circle'></i>
-              6 of 6
-            </p>
-            <p style="color: rgb(212 235 255);font-size: 12px;">success</p>
-          </div>
+          <!--          <p v-if="showConfirmed" class="text-2 status-3 status-2-mobile">-->
+          <!--            <i class='bx bx-check-circle'></i>-->
+          <!--            Success-->
+          <!--          </p>-->
+          <p v-if="showConfirmed2" class="text-2 status-green status-2-mobile">
+            <i class='bx bx-check-circle'></i>
+            6 of 6
+          </p>
+          <!--          <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>-->
           <span v-else  class="loader"></span>
         </div>
+
+      </div>
+
+      <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+          class="separate">
+        <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="inner">
+          <i class='bx bx-info-circle'></i>
+          <p class="text-1">Status :</p>
+        </div>
+        <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
+             class="inner width">
+          <p v-if="showConfirmed3"
+             style="display: flex;gap: 5px;"
+             class="text-2 status-green status-2-mobile">
+            <i class='bx bx-check'></i>
+            success
+          </p>
+          <span v-else  class="loader"></span>
+        </div>
+
       </div>
 
 
@@ -1096,6 +1119,11 @@ export default {
 .bx-info-circle{
   color: rgb(212 235 255);
 }
+
+.bx-check{
+  color: rgb(212 235 255);
+}
+
 .bx-highlight{
   color: rgb(212 235 255);
 }
@@ -1106,7 +1134,10 @@ export default {
 
 .text-2{
   color: rgb(212 235 255);
+
 }
+
+
 
 .processing{
   color: rgb(212 235 255);
