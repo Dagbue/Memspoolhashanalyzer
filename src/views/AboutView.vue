@@ -116,9 +116,9 @@
           <!--            <i class='bx bx-check-circle'></i>-->
           <!--            Success-->
           <!--          </p>-->
-          <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">
+          <p v-if="showConfirmed" class="text-2 status-green status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            2/6
+            6/6
           </p>
 <!--          <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>-->
           <span v-else  class="loader"></span>
@@ -238,9 +238,9 @@
         </div>
         <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
              class="inner width">
-          <p v-if="showConfirmed2" class="text-2 status-amber status-2-mobile">
+          <p v-if="showConfirmed2" class="text-2 status-green status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            2 of 6
+            6 of 6
           </p>
           <span v-else  class="loader"></span>
         </div>
@@ -364,10 +364,11 @@
       </div>
 
       <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
-           class="separate" @click="showDialog8">
+           class="separate" >
+<!--        // @click="showDialog8" for the modal here remember in separate -->
         <div class="inner">
           <!--          <i class='bx bx-info-circle'></i>-->
-          <p class="text-1-red">RBF</p>
+          <p class="text-1-green">RBF</p>
         </div>
         <div class="inner width">
           <!--                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
@@ -375,8 +376,8 @@
           <!--                      0 of 6-->
           <!--                    </p>-->
           <!--                    <span v-else  class="loader"></span>-->
-          <p class="processing"  >"Action needed"</p>
-<!--          <span v-else  class="loader"></span>-->
+          <p class="processing" v-if="showConfirmed3" >"Completed"</p>
+          <span v-else  class="loader"></span>
         </div>
       </div>
 
@@ -442,6 +443,23 @@
                     </p>
                     <span v-else  class="loader"></span>
 <!--          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>-->
+        </div>
+      </div>
+
+
+      <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
+           class="separate" @click="showDialog9" >
+        <div class="inner">
+          <!--          <i class='bx bx-info-circle'></i>-->
+          <p class="text-1-red">CPFP</p>
+        </div>
+        <div class="inner width">
+<!--          <p v-if="showConfirmed4" class="text-2 status-amber status-2-mobile">-->
+<!--            <i class='bx bx-check-circle'></i>-->
+<!--            3 of 4-->
+<!--          </p>-->
+<!--          <span v-else  class="loader"></span>-->
+          <!--          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>-->
         </div>
       </div>
 
@@ -883,6 +901,8 @@
 
     <fund-wallet-modal12 @close="hideDialog7" v-if="dialogIsVisible7"/>
 
+    <fund-wallet-modal14 @close="hideDialog9" v-if="dialogIsVisible9"/>
+
 
   </div>
 </template>
@@ -898,10 +918,12 @@ import FundWalletModal10 from "@/components/BaseComponents/modal/FundWalletModal
 import FundWalletModal11 from "@/components/BaseComponents/modal/FundWalletModal11.vue";
 import FundWalletModal12 from "@/components/BaseComponents/modal/FundWalletModal12.vue";
 import FundWalletModal13 from "@/components/BaseComponents/modal/FundWalletModal13.vue";
+import FundWalletModal14 from "@/components/BaseComponents/modal/FundWalletModal14.vue";
 
 export default {
   name: "AboutView",
   components: {
+    FundWalletModal14,
     FundWalletModal13,
     FundWalletModal12,
     FundWalletModal11,
@@ -928,6 +950,7 @@ export default {
       dialogIsVisible6: false,
       dialogIsVisible7: false,
       dialogIsVisible8: false,
+      dialogIsVisible9: false,
     };
   },
   computed:{
@@ -991,6 +1014,13 @@ export default {
     },
     showDialog8() {
       this.dialogIsVisible8 = true;
+    },
+
+    hideDialog9() {
+      this.dialogIsVisible9 = false;
+    },
+    showDialog9() {
+      this.dialogIsVisible9 = true;
     },
 
     changeScreen() {
