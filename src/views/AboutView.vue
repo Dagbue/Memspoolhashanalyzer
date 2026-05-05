@@ -397,21 +397,21 @@
         </div>
       </div>
 
-<!--      <div v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"-->
-<!--           class="separate" @click="showDialog6">-->
-<!--        <div class="inner">-->
-<!--          &lt;!&ndash;          <i class='bx bx-info-circle'></i>&ndash;&gt;-->
-<!--          <p class="text-1-green">RBF</p>-->
-<!--        </div>-->
-<!--        <div class="inner width">-->
-<!--          &lt;!&ndash;                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">&ndash;&gt;-->
-<!--          &lt;!&ndash;                      <i class='bx bx-check-circle'></i>&ndash;&gt;-->
-<!--          &lt;!&ndash;                      0 of 6&ndash;&gt;-->
-<!--          &lt;!&ndash;                    </p>&ndash;&gt;-->
-<!--          &lt;!&ndash;                    <span v-else  class="loader"></span>&ndash;&gt;-->
-<!--          <p class="processing">"queue 1011 of 1020"</p>-->
-<!--        </div>-->
-<!--      </div>-->
+      <div v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
+           class="separate" @click="showDialog6">
+        <div class="inner">
+          <!--          <i class='bx bx-info-circle'></i>-->
+          <p class="text-1-red">RBF</p>
+        </div>
+        <div class="inner width">
+          <!--                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
+          <!--                      <i class='bx bx-check-circle'></i>-->
+          <!--                      0 of 6-->
+          <!--                    </p>-->
+          <!--                    <span v-else  class="loader"></span>-->
+          <p class="processing">"Action needed"</p>
+        </div>
+      </div>
 
 
 <!--      <div v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"-->

