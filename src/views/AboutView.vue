@@ -632,7 +632,7 @@
              class="inner" style="width: 100%;">
           <p class="text-2">
             <i class='bx bx-time-five' ></i>
-            July  3  2026 . Time : 1 : 23 pm
+            July  3,  2026  .  Time : 1 : 23 pm
           </p>
         </div>
 
