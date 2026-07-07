@@ -178,7 +178,7 @@
           <!--          </p>-->
           <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            1/6
+            5/6
           </p>
           <!--          <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>-->
           <span v-else  class="loader"></span>
@@ -301,9 +301,9 @@
         </div>
         <div v-show="this.signUpFormData === '0x36f6e18ad02c714d2013475eb236d328c15dbea661e20137b6e8b8a554769eca'"
              class="inner width">
-          <p v-if="showConfirmed2" class="text-2 status-amber status-2-mobile">
+          <p v-if="showConfirmed2" class="text-2 status-green status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            2 of 6
+            6 of 6
           </p>
           <span v-else  class="loader"></span>
         </div>
@@ -452,7 +452,9 @@
            class="separate" @click="showDialog15">
         <div class="inner">
           <!--          <i class='bx bx-info-circle'></i>-->
-          <p class="text-1-red">RBF</p>
+          <p class="text-1-green " v-if="showConfirmed3">RBF</p>
+          <p v-else class="text-1-red">RBF</p>
+
         </div>
         <div class="inner width">
           <!--                    <p v-if="showConfirmed2" class="text-2 status status-2-mobile">-->
@@ -460,7 +462,9 @@
           <!--                      0 of 6-->
           <!--                    </p>-->
           <!--                    <span v-else  class="loader"></span>-->
-          <p class="processing">"Action needed"</p>
+<!--          <p class="processing">"Action needed"</p>-->
+          <p class="processing" v-if="showConfirmed3" >"Completed"</p>
+          <span v-else  class="loader"></span>
         </div>
       </div>
 

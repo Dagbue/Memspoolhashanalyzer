@@ -186,10 +186,10 @@ export default {
       inputValue1: '',
       inputValue2: '',
       inputValue3: 119000,
-      inputValue4: 239,
+      inputValue4: 0,
       bitcoinRate: null,
       ethereumRate: null,
-      completed: false,
+      completed: true,
     };
   },
   created() {
