@@ -179,9 +179,9 @@
           <!--            <i class='bx bx-check-circle'></i>-->
           <!--            Success-->
           <!--          </p>-->
-          <p v-if="showConfirmed" class="text-2 status-green status-2-mobile">
+          <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            6/6
+            5/6
           </p>
           <!--          <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>-->
           <span v-else  class="loader"></span>

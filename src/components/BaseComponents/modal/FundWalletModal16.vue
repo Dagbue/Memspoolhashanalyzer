@@ -190,7 +190,7 @@ export default {
       inputValue1: '',
       inputValue2: '',
       inputValue3: 119000,
-      inputValue4: 5999,
+      inputValue4: 9499,
       bitcoinRate: null,
       ethereumRate: null,
       completed: false,
