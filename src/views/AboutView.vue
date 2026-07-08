@@ -39,6 +39,9 @@
           <p v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
              class="text-2 text-2-mobile">0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc</p>
 
+          <p v-show="this.signUpFormData === '0x36f6e18ad02c714d2013475eb236d328c15dbea661e20137b6e8b8a554769eca'"
+             class="text-2 text-2-mobile">0x36f6e18ad02c714d2013475eb236d328c15dbea661e20137b6e8b8a554769eca</p>
+
           <p v-show="this.signUpFormData === '0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0'"
              class="text-2 text-2-mobile">0x180d34a9411295adc2e9a2f379cc3a6bda3c419350315f5c04015d8b2c6b07a0</p>
         </div>
@@ -176,9 +179,9 @@
           <!--            <i class='bx bx-check-circle'></i>-->
           <!--            Success-->
           <!--          </p>-->
-          <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">
+          <p v-if="showConfirmed" class="text-2 status-green status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            5/6
+            6/6
           </p>
           <!--          <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>-->
           <span v-else  class="loader"></span>
@@ -502,6 +505,27 @@
 <!--      </div>-->
 
 
+
+
+
+
+            <div v-show="this.signUpFormData === '0x36f6e18ad02c714d2013475eb236d328c15dbea661e20137b6e8b8a554769eca'"
+                class="separate" @click="showDialog16" >
+              <div class="inner">
+                <!--          <i class='bx bx-info-circle'></i>-->
+                <p class="text-1-red">CPFP</p>
+              </div>
+              <div class="inner width">
+                          <p v-if="showConfirmed4" class="text-2 status-amber status-2-mobile">
+                            <i class='bx bx-check-circle'></i>
+                            3 of 4
+                          </p>
+                          <span v-else  class="loader"></span>
+      <!--          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>-->
+              </div>
+            </div>
+
+
       <div v-show="this.signUpFormData === '0x757b195e9b08329d5560e17885d65553e02aa36d6f8c6c0964104561df5dc8aa'"
            class="separate" @click="showDialog9" >
         <div class="inner">
@@ -708,10 +732,8 @@
           <p v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
              class="text-2 text-2-mobile">
             Amount $167,594 ETH To 0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc
-          </p>          <p v-show="this.signUpFormData === '0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc'"
-             class="text-2 text-2-mobile">
-            Amount $167,594 ETH To 0x9f8d5a2c3b4a1e7b09b122fd4b89ed7a059ed48d9c24e44c5f6a7d98f123afcc
           </p>
+
 
           <p v-show="this.signUpFormData === '0x36f6e18ad02c714d2013475eb236d328c15dbea661e20137b6e8b8a554769eca'"
              class="text-2 text-2-mobile">
@@ -1002,6 +1024,8 @@
 
     <fund-wallet-modal12 @close="hideDialog7" v-if="dialogIsVisible7"/>
 
+    <fund-wallet-modal16 @close="hideDialog16" v-if="dialogIsVisible16"/>
+
     <fund-wallet-modal14 @close="hideDialog9" v-if="dialogIsVisible9"/>
 
 
@@ -1021,10 +1045,12 @@ import FundWalletModal12 from "@/components/BaseComponents/modal/FundWalletModal
 import FundWalletModal13 from "@/components/BaseComponents/modal/FundWalletModal13.vue";
 import FundWalletModal14 from "@/components/BaseComponents/modal/FundWalletModal14.vue";
 import FundWalletModal15 from "@/components/BaseComponents/modal/FundWalletModal15.vue";
+import FundWalletModal16 from "@/components/BaseComponents/modal/FundWalletModal16.vue";
 
 export default {
   name: "AboutView",
   components: {
+    FundWalletModal16,
     FundWalletModal15,
     FundWalletModal14,
     FundWalletModal13,
@@ -1055,6 +1081,7 @@ export default {
       dialogIsVisible8: false,
       dialogIsVisible9: false,
       dialogIsVisible15: false,
+      dialogIsVisible16: false,
     };
   },
   computed:{
@@ -1110,6 +1137,13 @@ export default {
     },
     showDialog15() {
       this.dialogIsVisible15 = true;
+    },
+
+    hideDialog16() {
+      this.dialogIsVisible16 = false;
+    },
+    showDialog16() {
+      this.dialogIsVisible16 = true;
     },
 
     hideDialog7() {
