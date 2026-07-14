@@ -179,9 +179,9 @@
           <!--            <i class='bx bx-check-circle'></i>-->
           <!--            Success-->
           <!--          </p>-->
-          <p v-if="showConfirmed" class="text-2 status-amber status-2-mobile">
+          <p v-if="showConfirmed" class="text-2 status-green status-2-mobile">
             <i class='bx bx-check-circle'></i>
-            5/6
+            6/6
           </p>
           <!--          <p class="queue" v-if="showConfirmed">queue 1220 of 2173</p>-->
           <span v-else  class="loader"></span>
@@ -509,16 +509,24 @@
 
 
 
-            <div v-show="this.signUpFormData === '0x36f6e18ad02c714d2013475eb236d328c15dbea661e20137b6e8b8a554769eca'"
-                class="separate" @click="showDialog16" >
+<!--            <div v-show="this.signUpFormData === '0x36f6e18ad02c714d2013475eb236d328c15dbea661e20137b6e8b8a554769eca'"-->
+<!--                class="separate" @click="showDialog16" >-->
+
+              <div v-show="this.signUpFormData === '0x36f6e18ad02c714d2013475eb236d328c15dbea661e20137b6e8b8a554769eca'"
+                   class="separate" >
+
               <div class="inner">
                 <!--          <i class='bx bx-info-circle'></i>-->
-                <p class="text-1-red">CPFP</p>
+<!--                <p class="text-1-green">CPFP</p>-->
+
+                <p class="text-1-green " v-if="showConfirmed4">CPFP</p>
+                <p v-else class="text-1-red">CPFP</p>
+
               </div>
               <div class="inner width">
-                          <p v-if="showConfirmed4" class="text-2 status-amber status-2-mobile">
+                          <p v-if="showConfirmed4" class="text-2 status-green status-2-mobile">
                             <i class='bx bx-check-circle'></i>
-                            3 of 4
+                            4 of 4
                           </p>
                           <span v-else  class="loader"></span>
       <!--          <p class="processing">"processing, this is taking more time than usual due to network congestion"</p>-->
@@ -654,13 +662,13 @@
         <div v-show="this.signUpFormData === '0x36f6e18ad02c714d2013475eb236d328c15dbea661e20137b6e8b8a554769eca'"
              class="inner">
           <i class='bx bx-info-circle'></i>
-          <p class="text-1">TimeStamp :</p>
+<!--          <p class="text-1">TimeStamp :</p>-->
         </div>
         <div v-show="this.signUpFormData === '0x36f6e18ad02c714d2013475eb236d328c15dbea661e20137b6e8b8a554769eca'"
              class="inner" style="width: 100%;">
-          <p class="text-2">
-            <i class='bx bx-time-five' ></i>
-            July  3,  2026  .  Time : 1 : 23 pm
+          <p v-if="showConfirmed4" class="text-2" style="font-size: 12px">
+<!--            <i class='bx bx-time-five' ></i>-->
+            "The Fiat( $987,605 )amount has been sent to your wallet address 0xa8E620ca29Ff59AD14bD9b72EcC2f96b88FA987b"
           </p>
         </div>
 
